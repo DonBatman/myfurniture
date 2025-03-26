@@ -40,7 +40,7 @@ minetest.register_node("myfurniture:chair", {
 --Arm Chair
 minetest.register_node("myfurniture:armchair", {
 	description = "Arm Chair",
-	tiles = {"default_pine_wood.png"},
+	tiles = {"wool_dark_grey.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
