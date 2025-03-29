@@ -614,3 +614,53 @@ minetest.register_node("myfurniture:picture4", {
 		}
 	}
 })
+--Chest Of Drawers
+minetest.register_node("myfurniture:chest_of_drawers", {
+	description = "Chest of Drawers",
+	tiles = {
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, 0, -0.25, 0.125, 0.5},
+			{-0.375, -0.375, -0.125, 0.375, -0.125, -0.0625},
+			{-0.5, -0.5, -0.0625, 0.5, 0.5, 0.5},
+			{-0.375, -0.0625, -0.125, 0.375, 0.1875, -0.0625},
+			{-0.375, 0.25, -0.125, 0.375, 0.4375, -0.0625},
+		}
+	}
+})
+--Bench
+minetest.register_node("myfurniture:bench", {
+	description = "Bench",
+	tiles = {
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			"default_pine_wood.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, 0, -0.25, 0.125, 0.5},
+			{0.25, -0.5, 0, 0.375, 0.125, 0.5},
+			{-0.5, 0, 0, 0.5, 0.125, 0.5},
+		}
+	}
+})

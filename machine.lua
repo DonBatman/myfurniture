@@ -2,7 +2,7 @@ local shape = {}
 local make_ok = {}
 
 minetest.register_node("myfurniture:machine", {
-	description = "Siding Machine",
+	description = "Furniture Machine",
 	tiles = {
 		"myfurniture_machine_top.png",
 		"myfurniture_machine_bottom.png",
@@ -12,7 +12,6 @@ minetest.register_node("myfurniture:machine", {
 		"myfurniture_machine_front.png"
 		},
 	drawtype = "nodebox",
-	inventory_image = "myfurniture_machine_inv.png",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky=2},
@@ -29,14 +28,14 @@ minetest.register_node("myfurniture:machine", {
 			{-0.5, 0.25, -0.0625, 0.5, 0.375, 0.0625},
 			{-0.1875, 0, -0.125, 0.1875, 0.5, 0.125},
 			{-0.125, 0, -0.1875, 0.125, 0.5, 0.1875},
-			{-0.0625, -0.0625, -0.0625, 0.0625, 0, 0.0625},
+			{-0.0625, -0.125, -0.0625, 0.0625, 0, 0.0625},
 		}
 	},
 
 after_place_node = function(pos, placer)
 	local meta = minetest.get_meta(pos);
 	meta:set_string("owner",  (placer:get_player_name() or ""));
-	meta:set_string("infotext",  "Siding Machine (owned by " .. (placer:get_player_name() or "") .. ")");
+	meta:set_string("infotext",  "Furniture Machine (owned by " .. (placer:get_player_name() or "") .. ")");
 	
 	local inv = meta:get_inventory()
 	if not inv:is_empty("ingot") then
@@ -70,7 +69,7 @@ on_construct = function(pos)
 		"label[7,1.5;Input:]"..
 		"label[7,3.5;Output:]"..
 		
-		"label[1,1;Pick Your Furniture - You must use pine wood]"..
+		"label[1,1;Pick Your Furniture]"..
 		--row 1
 		"image_button[1,2;1,1;myfurniture_mach1.png;furn1; ]"..
 		"image_button[2,2;1,1;myfurniture_mach2.png;furn2; ]"..
@@ -91,10 +90,13 @@ on_construct = function(pos)
 		"image_button[3,4;1,1;myfurniture_mach15.png;furn15; ]"..
 		"image_button[4,4;1,1;myfurniture_mach16.png;furn16; ]"..
 		"image_button[5,4;1,1;myfurniture_mach17.png;furn17; ]"..
+		"image_button[6,4;1,1;myfurniture_mach22.png;furn18; ]"..
 		--row 4
-		"image_button[1,5;1,1;myfurniture_mach19.png;furn19; ]"..
-		"image_button[2,5;1,1;myfurniture_mach20.png;furn20; ]"..
-		"image_button[3,5;1,1;myfurniture_mach18.png;furn18; ]"..
+		"image_button[1,5;1,1;myfurniture_mach23.png;furn19; ]"..
+		"image_button[2,5;1,1;myfurniture_mach18.png;pic1; ]"..
+		"image_button[3,5;1,1;myfurniture_mach19.png;pic2; ]"..
+		"image_button[4,5;1,1;myfurniture_mach20.png;pic3; ]"..
+		"image_button[5,5;1,1;myfurniture_mach21.png;pic4; ]"..
 
 		"list[current_player;main;1,7;8,4;]")
 	meta:set_string("infotext", "Furniture Machine")
@@ -126,7 +128,10 @@ or fields["furn16"]
 or fields["furn17"]
 or fields["furn18"]
 or fields["furn19"]
-or fields["furn20"]
+or fields["pic1"]
+or fields["pic2"]
+or fields["pic3"]
+or fields["pic4"]
 then
 
 	if fields["furn1"] then
@@ -267,7 +272,7 @@ then
 
 	if fields["furn18"] then
 		make_ok = "0"
-		shape = "myfurniture:fridge"
+		shape = "myfurniture:chest_of_drawers"
 		if inv:is_empty("ingot") then
 			return
 		end
@@ -275,15 +280,39 @@ then
 
 	if fields["furn19"] then
 		make_ok = "0"
-		shape = "myfurniture:stove"
+		shape = "myfurniture:bench"
 		if inv:is_empty("ingot") then
 			return
 		end
 	end
 
-	if fields["furn20"] then
+	if fields["pic1"] then
 		make_ok = "0"
-		shape = "myfurniture:dishwasher"
+		shape = "myfurniture:picture1"
+		if inv:is_empty("ingot") then
+			return
+		end
+	end
+
+	if fields["pic2"] then
+		make_ok = "0"
+		shape = "myfurniture:picture2"
+		if inv:is_empty("ingot") then
+			return
+		end
+	end
+
+	if fields["pic3"] then
+		make_ok = "0"
+		shape = "myfurniture:picture3"
+		if inv:is_empty("ingot") then
+			return
+		end
+	end
+
+	if fields["pic4"] then
+		make_ok = "0"
+		shape = "myfurniture:picture4"
 		if inv:is_empty("ingot") then
 			return
 		end
