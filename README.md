@@ -1,5 +1,5 @@
 # myfurniture
-Basic furniture for your home. This is a work in progress. Expect changes!
+Basic furniture for your home. Build a machine to make the furniture. Then put in wood and select what you want.
 
 Code Licence - MIT
 
