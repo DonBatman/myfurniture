@@ -1,6 +1,35 @@
 
 dofile(minetest.get_modpath("myfurniture").."/machine.lua")
 
+
+
+
+
+function minetest.get_myfurniture_formspec(pos)
+    local spos = pos.x .. "," .. pos.y .. "," ..pos.z
+    local formspec =
+        "size[9,7]"..
+        "list[nodemeta:".. spos .. ";main;0.5,0.5;8,2;]"..
+        "list[current_player;main;0.5,3;8,4;]"
+    return formspec
+end
+function minetest.get_myfurniture_formspec2(pos)
+    local spos = pos.x .. "," .. pos.y .. "," ..pos.z
+    local formspec =
+        "size[9,7]"..
+        "list[nodemeta:".. spos .. ";main;0.5,0.5;8,1;]"..
+        "list[current_player;main;0.5,3;8,4;]"
+    return formspec
+end
+function minetest.get_myfurniture_formspec3(pos)
+    local spos = pos.x .. "," .. pos.y .. "," ..pos.z
+    local formspec =
+        "size[9,7]"..
+        "list[nodemeta:".. spos .. ";main;0.5,0.5;8,1;]"..
+        "list[current_player;main;0.5,3;8,4;]"
+    return formspec
+end
+
 --Table
 minetest.register_node("myfurniture:dinning_table", {
 	description = "Dinning Table",
@@ -242,102 +271,7 @@ minetest.register_node("myfurniture:tv_stand", {
 			}
 		},
 })
---Dishwasher
-minetest.register_node("myfurniture:dishwasher", {
-	description = "Dishwasher",
-	tiles = {
-			"myfurniture_dishwasher_top.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_front.png",
-			},
-	drawtype = "normal",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
-})
---Stove
-minetest.register_node("myfurniture:stove", {
-	description = "Stove",
-	tiles = {
-			"myfurniture_stove_top.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_stove_front.png",
-			},
-	drawtype = "nodebox",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, 0.3125, 0.5},
-			{-0.5, 0.3125, 0.3125, 0.5, 0.5, 0.5},
-		}
-	}
-})
---Fridge
-minetest.register_node("myfurniture:fridge_bottom", {
-	description = "Fridge",
-	tiles = {
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_fridge_front.png",
-			},
-	drawtype = "normal",
-	inventory_image = "myfurniture_fridge_inv.png",
-	wield_image = "myfurniture_fridge_inv.png",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
-on_place = function(itemstack, placer, pointed_thing)
-        local pos = pointed_thing.above
-        if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name ~= "air" then
-            minetest.chat_send_player( placer:get_player_name(), "Not enough space to place this!" )
-            return
-        end
-        return minetest.item_place(itemstack, placer, pointed_thing)
-    end,
 
-after_destruct = function(pos, oldnode)
-		minetest.remove_node({x = pos.x, y = pos.y + 1, z = pos.z})
-	end,
-
-after_place_node = function(pos, placer)
-	minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z},{name = "myfurniture:fridge_top", 		param2=minetest.dir_to_facedir(placer:get_look_dir())});
-
-	end,
-after_destruct = function(pos, oldnode)
-		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z},{name = "air"})
-	end,
-})
---Fridge Top
-minetest.register_node("myfurniture:fridge_top", {
---	description = "Fridge",
-	tiles = {
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_dishwasher_sides.png",
-			"myfurniture_fridge_front.png^[transformFY",
-			},
-	drawtype = "normal",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
-after_destruct = function(pos, oldnode)
-		minetest.remove_node({x = pos.x, y = pos.y - 1, z = pos.z})
-	end,
-})
 --Kitchen Cabinet
 minetest.register_node("myfurniture:kitchen_cabinet", {
 	description = "Kitchen Cabinet",
@@ -360,7 +294,57 @@ minetest.register_node("myfurniture:kitchen_cabinet", {
 			{0.0625, -0.3125, -0.5, 0.4375, 0.375, -0.4375},
 			{-0.5, -0.5, -0.4375, 0.5, 0.5, 0.5},
 		}
-	}
+	},
+	on_construct = function(pos)
+        local meta = minetest.get_meta(pos)
+        meta:set_string("infotext", "Kitchen Cabinet")
+        meta:set_string("owner", "")
+        local inv = meta:get_inventory()
+        inv:set_size("main", 9*7)
+    end,
+
+    can_dig = function(pos,player)
+
+	local meta = minetest.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local inv = meta:get_inventory()
+	if not inv:is_empty("ingot") then
+		return false
+	elseif not inv:is_empty("res") then
+		return false
+	end
+	
+
+
+        local meta = minetest.get_meta(pos);
+        local inv = meta:get_inventory()
+
+        return inv:is_empty("main")
+	
+
+
+    end,
+    allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+        local meta = minetest.get_meta(pos)
+
+        return count
+    end,
+    allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+        local meta = minetest.get_meta(pos)
+        return stack:get_count()
+    end,
+    allow_metadata_inventory_take = function(pos, listname, index, stack, player)
+        local meta = minetest.get_meta(pos)
+        return stack:get_count()
+    end,
+
+    on_rightclick = function(pos, node, clicker)
+        local meta = minetest.get_meta(pos)
+            minetest.show_formspec(
+                clicker:get_player_name(),
+                "myfurniture:kitchen_cabinet",
+                minetest.get_myfurniture_formspec(pos)
+            )
+    end,
 })
 --Kitchen Upper Cabinet
 minetest.register_node("myfurniture:kitchen_upper_cabinet", {
@@ -384,7 +368,57 @@ minetest.register_node("myfurniture:kitchen_upper_cabinet", {
 			{0.0625, -0.3125, 0, 0.4375, 0.375, 0.0625},
 			{-0.5, -0.5, 0.0625, 0.5, 0.5, 0.5},
 		}
-	}
+	},
+		on_construct = function(pos)
+        local meta = minetest.get_meta(pos)
+        meta:set_string("infotext", "Kitchen Cabinet")
+        meta:set_string("owner", "")
+        local inv = meta:get_inventory()
+        inv:set_size("main", 9*7)
+    end,
+
+    can_dig = function(pos,player)
+
+	local meta = minetest.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local inv = meta:get_inventory()
+	if not inv:is_empty("ingot") then
+		return false
+	elseif not inv:is_empty("res") then
+		return false
+	end
+	
+
+
+        local meta = minetest.get_meta(pos);
+        local inv = meta:get_inventory()
+
+        return inv:is_empty("main")
+	
+
+
+    end,
+    allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+        local meta = minetest.get_meta(pos)
+
+        return count
+    end,
+    allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+        local meta = minetest.get_meta(pos)
+        return stack:get_count()
+    end,
+    allow_metadata_inventory_take = function(pos, listname, index, stack, player)
+        local meta = minetest.get_meta(pos)
+        return stack:get_count()
+    end,
+
+    on_rightclick = function(pos, node, clicker)
+        local meta = minetest.get_meta(pos)
+            minetest.show_formspec(
+                clicker:get_player_name(),
+                "myfurniture:kitchen_cabinet",
+                minetest.get_myfurniture_formspec2(pos)
+            )
+    end,
 })
 --Kitchen Corner Cabinet
 minetest.register_node("myfurniture:kitchen_corner_cabinet", {
@@ -424,6 +458,159 @@ minetest.register_node("myfurniture:kitchen_upper_corner_cabinet", {
 			{0.0625, -0.3125, 0, 0.4375, 0.375, 0.0625},
 			{-0.5, -0.5, 0.0625, 0.5, 0.5, 0.5},
 			{-0.5, -0.5, -0.5, -0.0625, 0.5, 0.5},
+		}
+	},
+		on_construct = function(pos)
+        local meta = minetest.get_meta(pos)
+        meta:set_string("infotext", "Kitchen Cabinet")
+        meta:set_string("owner", "")
+        local inv = meta:get_inventory()
+        inv:set_size("main", 9*7)
+    end,
+
+    can_dig = function(pos,player)
+
+	local meta = minetest.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local inv = meta:get_inventory()
+	if not inv:is_empty("ingot") then
+		return false
+	elseif not inv:is_empty("res") then
+		return false
+	end
+	
+
+
+        local meta = minetest.get_meta(pos);
+        local inv = meta:get_inventory()
+
+        return inv:is_empty("main")
+	
+
+
+    end,
+    allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+        local meta = minetest.get_meta(pos)
+
+        return count
+    end,
+    allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+        local meta = minetest.get_meta(pos)
+        return stack:get_count()
+    end,
+    allow_metadata_inventory_take = function(pos, listname, index, stack, player)
+        local meta = minetest.get_meta(pos)
+        return stack:get_count()
+    end,
+
+    on_rightclick = function(pos, node, clicker)
+        local meta = minetest.get_meta(pos)
+            minetest.show_formspec(
+                clicker:get_player_name(),
+                "myfurniture:kitchen_cabinet",
+                minetest.get_myfurniture_formspec3(pos)
+            )
+    end,
+
+})
+
+--Pictures
+minetest.register_node("myfurniture:picture1", {
+	description = "Picture",
+	tiles = {
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_picture1.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, 0.4375, 0.5, 0.5, 0.5},
+			{0.4375, -0.5, 0.375, 0.5, 0.5, 0.5},
+			{-0.5, -0.5, 0.375, -0.4375, 0.5, 0.5},
+			{-0.5, -0.5, 0.375, 0.5, -0.4375, 0.5},
+			{-0.5, 0.4375, 0.375, 0.5, 0.5, 0.5},
+		}
+	}
+})
+minetest.register_node("myfurniture:picture2", {
+	description = "Picture",
+	tiles = {
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_picture2.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, 0.4375, 0.5, 0.125, 0.5},
+			{0.4375, -0.5, 0.375, 0.5, 0.125, 0.5},
+			{-0.5, -0.5, 0.375, -0.4375, 0.125, 0.5},
+			{-0.5, -0.5, 0.375, 0.5, -0.4375, 0.5},
+			{-0.5, 0.0625, 0.375, 0.5, 0.125, 0.5},
+		}
+	}
+})
+minetest.register_node("myfurniture:picture3", {
+	description = "Picture",
+	tiles = {
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_picture3.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, 0.4375, 0.5, 0.5, 0.5},
+			{0.4375, -0.5, 0.375, 0.5, 0.5, 0.5},
+			{-0.0625, -0.5, 0.375, 0, 0.5, 0.5},
+			{-0.0625, -0.5, 0.375, 0.5, -0.4375, 0.5},
+			{-0.0625, 0.4375, 0.375, 0.5, 0.5, 0.5},
+		}
+	}
+})
+minetest.register_node("myfurniture:picture4", {
+	description = "Picture",
+	tiles = {
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_pictures.png",
+			"myfurniture_picture4.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.5, 0.4375, 0.25, 0.0625, 0.5},
+			{0.1875, -0.5, 0.375, 0.25, 0, 0.5},
+			{-0.25, -0.5, 0.375, -0.1875, 0.0625, 0.5},
+			{-0.25, -0.5, 0.375, 0.25, -0.4375, 0.5},
+			{-0.25, 0, 0.375, 0.25, 0.0625, 0.5},
 		}
 	}
 })
