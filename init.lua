@@ -2,6 +2,31 @@
 dofile(minetest.get_modpath("myfurniture").."/machine.lua")
 
 
+local wood_mat = {
+				{"default:wood","default_wood","wood","Apple Wood"},
+				{"default:acacia_wood","default_acacia_wood","acacia_wood","Acacia Wood"},
+				{"default:aspen_wood","default_aspen_wood","aspen_wood","Aspen Wood"},
+				{"default:pine_wood","default_pine_wood","pine_wood","Pine Wood"},
+				{"default:junglewood","default_junglewood","junglewood","Jungle Wood"},
+				}
+
+for i in ipairs(wood_mat) do
+	local wmat = wood_mat[i][1]
+	local wimg = wood_mat[i][2]
+	local wtype = wood_mat[i][3]
+	local wdesc = wood_mat[i][4]
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -31,9 +56,9 @@ function minetest.get_myfurniture_formspec3(pos)
 end
 
 --Table
-minetest.register_node("myfurniture:dinning_table", {
-	description = "Dinning Table",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_dinning_table", {
+	description = wdesc.." Dinning Table",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -50,9 +75,9 @@ minetest.register_node("myfurniture:dinning_table", {
 		},
 })
 --Chair
-minetest.register_node("myfurniture:chair", {
-	description = "Chair",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_chair", {
+	description = wdesc.." Chair",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -88,9 +113,9 @@ minetest.register_node("myfurniture:armchair", {
 		},
 })
 --Bookshelf
-minetest.register_node("myfurniture:bookshelf", {
-	description = "Bookshelf",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_bookshelf", {
+	description = wdesc.." Bookshelf",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -108,9 +133,9 @@ minetest.register_node("myfurniture:bookshelf", {
 		},
 })
 --Bookshelf Top
-minetest.register_node("myfurniture:bookshelf_top", {
-	description = "Bookshelf Top",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_bookshelf_top", {
+	description = wdesc.." Bookshelf Top",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -127,9 +152,9 @@ minetest.register_node("myfurniture:bookshelf_top", {
 		},
 })
 --Cabinet
-minetest.register_node("myfurniture:cabinet", {
-	description = "Cabinet",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_cabinet", {
+	description = wdesc.." Cabinet",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -147,9 +172,9 @@ minetest.register_node("myfurniture:cabinet", {
 		},
 })
 --Desk
-minetest.register_node("myfurniture:desk", {
-	description = "Desk",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_desk", {
+	description = wdesc.." Desk",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -166,9 +191,9 @@ minetest.register_node("myfurniture:desk", {
 		},
 })
 --End Table
-minetest.register_node("myfurniture:end_table", {
-	description = "End Table",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_end_table", {
+	description = wdesc.." End Table",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -235,9 +260,9 @@ minetest.register_node("myfurniture:sofa_middle", {
 		},
 })
 --Stool
-minetest.register_node("myfurniture:stool", {
-	description = "Stool",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_stool", {
+	description = wdesc.." Stool",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -254,9 +279,9 @@ minetest.register_node("myfurniture:stool", {
 		},
 })
 --TV Stand
-minetest.register_node("myfurniture:tv_stand", {
-	description = "TV Stand",
-	tiles = {"default_pine_wood.png"},
+minetest.register_node("myfurniture:"..wtype.."_tv_stand", {
+	description = wdesc.." TV Stand",
+	tiles = {wimg..".png"},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -273,15 +298,15 @@ minetest.register_node("myfurniture:tv_stand", {
 })
 
 --Kitchen Cabinet
-minetest.register_node("myfurniture:kitchen_cabinet", {
-	description = "Kitchen Cabinet",
+minetest.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
+	description = wdesc.." Kitchen Cabinet",
 	tiles = {
 			"myfurniture_kitchen_cabinet_top.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png^[transformR90^myfurniture_kitchen_cabinet_tint.png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png^[transformR90^myfurniture_kitchen_cabinet_tint.png",
 			},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -341,21 +366,21 @@ minetest.register_node("myfurniture:kitchen_cabinet", {
         local meta = minetest.get_meta(pos)
             minetest.show_formspec(
                 clicker:get_player_name(),
-                "myfurniture:kitchen_cabinet",
+                "myfurniture:"..wtype.."_kitchen_cabinet",
                 minetest.get_myfurniture_formspec(pos)
             )
     end,
 })
 --Kitchen Upper Cabinet
-minetest.register_node("myfurniture:kitchen_upper_cabinet", {
-	description = "Kitchen Upper Cabinet",
+minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
+	description = wdesc.." Kitchen Upper Cabinet",
 	tiles = {
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png^[transformR90^myfurniture_kitchen_cabinet_tint.png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png^[transformR90^myfurniture_kitchen_cabinet_tint.png",
 			},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -415,21 +440,21 @@ minetest.register_node("myfurniture:kitchen_upper_cabinet", {
         local meta = minetest.get_meta(pos)
             minetest.show_formspec(
                 clicker:get_player_name(),
-                "myfurniture:kitchen_cabinet",
+                "myfurniture:"..wtype.."_kitchen_cabinet",
                 minetest.get_myfurniture_formspec2(pos)
             )
     end,
 })
 --Kitchen Corner Cabinet
-minetest.register_node("myfurniture:kitchen_corner_cabinet", {
-	description = "Kitchen Upper Corner Cabinet",
+minetest.register_node("myfurniture:"..wtype.."_kitchen_corner_cabinet", {
+	description = wdesc.." Kitchen Upper Corner Cabinet",
 	tiles = {
 			"myfurniture_dishwasher_top.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png",
 			},
 	drawtype = "normal",
 	paramtype = "light",
@@ -437,15 +462,15 @@ minetest.register_node("myfurniture:kitchen_corner_cabinet", {
 	groups = {cracky = 2, oddly_breakable_by_hand = 2},
 })
 --Kitchen Upper Corner Cabinet
-minetest.register_node("myfurniture:kitchen_upper_corner_cabinet", {
-	description = "Kitchen Upper Corner Cabinet",
+minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
+	description = wdesc.." Kitchen Upper Corner Cabinet",
 	tiles = {
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png^[transformR90^myfurniture_kitchen_cabinet_tint.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png^[transformR90^myfurniture_kitchen_cabinet_tint.png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png^[transformR90^myfurniture_kitchen_cabinet_tint.png",
+			wimg..".png",
+			wimg..".png",
+			wimg..".png^[transformR90^myfurniture_kitchen_cabinet_tint.png",
 			},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -506,7 +531,7 @@ minetest.register_node("myfurniture:kitchen_upper_corner_cabinet", {
         local meta = minetest.get_meta(pos)
             minetest.show_formspec(
                 clicker:get_player_name(),
-                "myfurniture:kitchen_cabinet",
+                "myfurniture:"..wtype.."_kitchen_cabinet",
                 minetest.get_myfurniture_formspec3(pos)
             )
     end,
@@ -615,15 +640,10 @@ minetest.register_node("myfurniture:picture4", {
 	}
 })
 --Chest Of Drawers
-minetest.register_node("myfurniture:chest_of_drawers", {
-	description = "Chest of Drawers",
+minetest.register_node("myfurniture:"..wtype.."_chest_of_drawers", {
+	description = wdesc.." Chest of Drawers",
 	tiles = {
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
+			wimg..".png",
 			},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -641,15 +661,10 @@ minetest.register_node("myfurniture:chest_of_drawers", {
 	}
 })
 --Bench
-minetest.register_node("myfurniture:bench", {
-	description = "Bench",
+minetest.register_node("myfurniture:"..wtype.."_bench", {
+	description = wdesc.." Bench",
 	tiles = {
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
-			"default_pine_wood.png",
+			wimg..".png",
 			},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -664,3 +679,4 @@ minetest.register_node("myfurniture:bench", {
 		}
 	}
 })
+end

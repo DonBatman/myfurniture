@@ -1,6 +1,8 @@
 local shape = {}
 local make_ok = {}
 
+
+	
 minetest.register_node("myfurniture:machine", {
 	description = "Furniture Machine",
 	tiles = {
@@ -134,204 +136,228 @@ or fields["pic3"]
 or fields["pic4"]
 then
 
+	local ingotstack = inv:get_stack("ingot", 1)
+	local resstack = inv:get_stack("res", 1)
+	
+local wood_mat = {
+				{"default:wood","default_wood","wood","Apple Wood"},
+				{"default:acacia_wood","default_acacia_wood","acacia_wood","Acacia Wood"},
+				{"default:aspen_wood","default_aspen_wood","aspen_wood","Aspen Wood"},
+				{"default:pine_wood","default_pine_wood","pine_wood","Pine Wood"},
+				{"default:junglewood","default_junglewood","junglewood","Jungle Wood"},
+				}
+	for i in ipairs(wood_mat) do
+	local wmat = wood_mat[i][1]
+	local wimg = wood_mat[i][2]
+	local wtype = wood_mat[i][3]
+	local wdesc = wood_mat[i][4]
+	local woodstack = inv:get_stack("ingot",1)
+	local woodname = woodstack:get_name()
+	
+
+	
 	if fields["furn1"] then
-		make_ok = "0"
-		shape = "myfurniture:dinning_table"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_dinning_table"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn2"] then
-		make_ok = "0"
-		shape = "myfurniture:chair"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_chair"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn3"] then
-		make_ok = "0"
-		shape = "myfurniture:stool"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_stool"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn4"] then
-		make_ok = "0"
-		shape = "myfurniture:end_table"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_end_table"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn5"] then
-		make_ok = "0"
-		shape = "myfurniture:bookshelf"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_bookshelf"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn6"] then
-		make_ok = "0"
-		shape = "myfurniture:bookshelf_top"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_bookshelf_top"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn7"] then
-		make_ok = "0"
-		shape = "myfurniture:desk"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_desk"
+			make_ok = "1"
 		end
 	end
 
-	if fields["furn8"] then
-		make_ok = "0"
-		shape = "myfurniture:armchair"
-		if inv:is_empty("ingot") then
-			return
-		end
-	end
-
-	if fields["furn9"] then
-		make_ok = "0"
-		shape = "myfurniture:sofa_left"
-		if inv:is_empty("ingot") then
-			return
-		end
-	end
-
-	if fields["furn10"] then
-		make_ok = "0"
-		shape = "myfurniture:sofa_middle"
-		if inv:is_empty("ingot") then
-			return
-		end
-	end
-
-	if fields["furn11"] then
-		make_ok = "0"
-		shape = "myfurniture:sofa_right"
-		if inv:is_empty("ingot") then
-			return
-		end
-	end
 
 	if fields["furn12"] then
-		make_ok = "0"
-		shape = "myfurniture:tv_stand"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_tv_stand"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn13"] then
-		make_ok = "0"
-		shape = "myfurniture:cabinet"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_cabinet"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn14"] then
-		make_ok = "0"
-		shape = "myfurniture:kitchen_cabinet"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_kitchen_cabinet"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn15"] then
-		make_ok = "0"
-		shape = "myfurniture:kitchen_corner_cabinet"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_kitchen_corner_cabinet"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn16"] then
-		make_ok = "0"
-		shape = "myfurniture:kitchen_upper_cabinet"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_kitchen_upper_cabinet"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn17"] then
-		make_ok = "0"
-		shape = "myfurniture:kitchen_upper_corner_cabinet"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_kitchen_upper_corner_cabinet"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn18"] then
-		make_ok = "0"
-		shape = "myfurniture:chest_of_drawers"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_chest_of_drawers"
+			make_ok = "1"
 		end
 	end
 
 	if fields["furn19"] then
-		make_ok = "0"
-		shape = "myfurniture:bench"
-		if inv:is_empty("ingot") then
-			return
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_bench"
+			make_ok = "1"
 		end
 	end
-
+end--ends ipairs
 	if fields["pic1"] then
-		make_ok = "0"
-		shape = "myfurniture:picture1"
-		if inv:is_empty("ingot") then
-			return
-		end
+			if
+				ingotstack:get_name()=="default:wood" or
+				ingotstack:get_name()=="default:pine_wood" or
+				ingotstack:get_name()=="default:aspen_wood" or
+				ingotstack:get_name()=="default:acacia_wood" or
+				ingotstack:get_name()=="default:junglewood" then
+				make_ok = "1"
+				shape = "myfurniture:picture1"
+			end
 	end
 
 	if fields["pic2"] then
-		make_ok = "0"
-		shape = "myfurniture:picture2"
-		if inv:is_empty("ingot") then
-			return
-		end
+			if
+				ingotstack:get_name()=="default:wood" or
+				ingotstack:get_name()=="default:pine_wood" or
+				ingotstack:get_name()=="default:aspen_wood" or
+				ingotstack:get_name()=="default:acacia_wood" or
+				ingotstack:get_name()=="default:junglewood" then
+				make_ok = "1"
+				shape = "myfurniture:picture2"
+			end
 	end
 
 	if fields["pic3"] then
-		make_ok = "0"
-		shape = "myfurniture:picture3"
-		if inv:is_empty("ingot") then
-			return
-		end
+			if
+				ingotstack:get_name()=="default:wood" or
+				ingotstack:get_name()=="default:pine_wood" or
+				ingotstack:get_name()=="default:aspen_wood" or
+				ingotstack:get_name()=="default:acacia_wood" or
+				ingotstack:get_name()=="default:junglewood" then
+				make_ok = "1"
+				shape = "myfurniture:picture3"
+			end
 	end
 
 	if fields["pic4"] then
-		make_ok = "0"
-		shape = "myfurniture:picture4"
-		if inv:is_empty("ingot") then
-			return
+			if
+				ingotstack:get_name()=="default:wood" or
+				ingotstack:get_name()=="default:pine_wood" or
+				ingotstack:get_name()=="default:aspen_wood" or
+				ingotstack:get_name()=="default:acacia_wood" or
+				ingotstack:get_name()=="default:junglewood" then
+				make_ok = "1"
+				shape = "myfurniture:picture4"
+			end
+	end
+	
+	if fields["furn8"] then
+		if
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:armchair"
 		end
 	end
 
-		local ingotstack = inv:get_stack("ingot", 1)
-		local resstack = inv:get_stack("res", 1)
-
-
-------------------------------------------------------------------------------------------
---register nodes here
-------------------------------------------------------------------------------------------
-		if ingotstack:get_name()=="default:wood" or
-		ingotstack:get_name()=="default:pine_wood" or
-		ingotstack:get_name()=="default:aspen_wood" or
-		ingotstack:get_name()=="default:acacia_wood" or
-		ingotstack:get_name()=="default:junglewood" then
-				make_ok = "1"
+	if fields["furn9"] then
+	
+		if 
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:sofa_left"
 		end
+	end
+
+	if fields["furn10"] then
+		if
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:sofa_middle"
+		end
+	end
+
+	if fields["furn11"] then
+		if
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:sofa_right"
+		end
+	end
 
 ----------------------------------------------------------------------------
     		if make_ok == "1" then
@@ -341,9 +367,8 @@ then
 				make_ok = 0
 			end            
    
-
-end	
-end,
+end
+end
 })
 
 --Craft
