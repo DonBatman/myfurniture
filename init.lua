@@ -16,20 +16,6 @@ for i in ipairs(wood_mat) do
 	local wtype = wood_mat[i][3]
 	local wdesc = wood_mat[i][4]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function minetest.get_myfurniture_formspec(pos)
     local spos = pos.x .. "," .. pos.y .. "," ..pos.z
     local formspec =
@@ -62,7 +48,7 @@ minetest.register_node("myfurniture:"..wtype.."_dinning_table", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -81,7 +67,7 @@ minetest.register_node("myfurniture:"..wtype.."_chair", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -101,7 +87,7 @@ minetest.register_node("myfurniture:armchair", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -119,7 +105,7 @@ minetest.register_node("myfurniture:"..wtype.."_bookshelf", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -139,7 +125,7 @@ minetest.register_node("myfurniture:"..wtype.."_bookshelf_top", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -158,7 +144,7 @@ minetest.register_node("myfurniture:"..wtype.."_cabinet", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -178,7 +164,7 @@ minetest.register_node("myfurniture:"..wtype.."_desk", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -197,7 +183,7 @@ minetest.register_node("myfurniture:"..wtype.."_end_table", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -216,7 +202,7 @@ minetest.register_node("myfurniture:sofa_right", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -233,7 +219,7 @@ minetest.register_node("myfurniture:sofa_left", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -250,7 +236,7 @@ minetest.register_node("myfurniture:sofa_middle", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -266,7 +252,7 @@ minetest.register_node("myfurniture:"..wtype.."_stool", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -285,7 +271,7 @@ minetest.register_node("myfurniture:"..wtype.."_tv_stand", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -311,7 +297,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -385,7 +371,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -459,7 +445,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_corner_cabinet", {
 	drawtype = "normal",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 })
 --Kitchen Upper Corner Cabinet
 minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
@@ -475,7 +461,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -552,7 +538,7 @@ minetest.register_node("myfurniture:picture1", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -577,7 +563,7 @@ minetest.register_node("myfurniture:picture2", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -602,7 +588,7 @@ minetest.register_node("myfurniture:picture3", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -627,7 +613,7 @@ minetest.register_node("myfurniture:picture4", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -648,7 +634,7 @@ minetest.register_node("myfurniture:"..wtype.."_chest_of_drawers", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -669,7 +655,7 @@ minetest.register_node("myfurniture:"..wtype.."_bench", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
