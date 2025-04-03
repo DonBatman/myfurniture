@@ -152,6 +152,19 @@ local wood_mat = {
 				{"my_door_wood:wood_red","mydoors_red_wood","red_wood","Red Wood"},
 				{"my_door_wood:wood_white","mydoors_white_wood","white_wood","White Wood"},
 				{"my_door_wood:wood_yellow","mydoors_yellow_wood","yellow_wood","Yellow Wood"},
+				{"moretrees:apple_tree_planks","moretrees_apple_tree_wood","apple_tree_wood","Apple Tree Wood"},
+				{"moretrees:beech_planks","moretrees_beech_wood","beech_wood","Beech Wood"},
+				{"moretrees:birch_planks","moretrees_birch_wood","birch_wood","Birch Wood"},
+				{"moretrees:cedar_planks","moretrees_cedar_wood","cedar_wood","Cedar Wood"},
+				{"moretrees:date_palm_planks","moretrees_date_palm_wood","date_palm_wood","Date Palm Wood"},
+				{"moretrees:fir_planks","moretrees_fir_wood","fir_wood","Fir Wood"},
+				{"moretrees:oak_planks","moretrees_oak_wood","oak_wood","Oak Wood"},
+				{"moretrees:palm_planks","moretrees_palm_wood","palm_wood","Palm Wood"},
+				{"moretrees:poplar_planks","moretrees_poplar_wood","poplar_wood","Poplar Wood"},
+				{"moretrees:rubber_tree_planks","moretrees_rubber_tree_wood","rubber_tree_wood","Rubber Tree Wood"},
+				{"moretrees:sequoia_planks","moretrees_sequoia_wood","sequoia_wood","Sequoia Wood"},
+				{"moretrees:spruce_planks","moretrees_spruce_wood","spruce_wood","Spruce Wood"},
+				{"moretrees:willow_planks","moretrees_willow_wood","willow_wood","Willow Wood"},
 				}
 	for i in ipairs(wood_mat) do
 	local wmat = wood_mat[i][1]
