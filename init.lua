@@ -8,6 +8,13 @@ local wood_mat = {
 				{"default:aspen_wood","default_aspen_wood","aspen_wood","Aspen Wood"},
 				{"default:pine_wood","default_pine_wood","pine_wood","Pine Wood"},
 				{"default:junglewood","default_junglewood","junglewood","Jungle Wood"},
+				{"my_door_wood:wood_black","mydoors_black_wood","black_wood","Black Wood"},
+				{"my_door_wood:wood_brown","mydoors_brown_wood","brown_wood","Brown Wood"},
+				{"my_door_wood:wood_dark_grey","mydoors_dark_grey_wood","dark_grey_wood","Dark Grey Wood"},
+				{"my_door_wood:wood_grey","mydoors_grey_wood","grey_wood","Grey Wood"},
+				{"my_door_wood:wood_red","mydoors_red_wood","red_wood","Red Wood"},
+				{"my_door_wood:wood_white","mydoors_white_wood","white_wood","White Wood"},
+				{"my_door_wood:wood_yellow","mydoors_yellow_wood","yellow_wood","Yellow Wood"},
 				}
 
 for i in ipairs(wood_mat) do
