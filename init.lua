@@ -27,7 +27,18 @@ local wood_mat = {
 				{"moretrees:rubber_tree_planks","moretrees_rubber_tree_wood","rubber_tree_wood","Rubber Tree Wood"},
 				{"moretrees:sequoia_planks","moretrees_sequoia_wood","sequoia_wood","Sequoia Wood"},
 				{"moretrees:spruce_planks","moretrees_spruce_wood","spruce_wood","Spruce Wood"},
-				{"moretrees:willow_planks","moretrees_willow_wood","willow_wood","Willow Wood"}
+				{"moretrees:willow_planks","moretrees_willow_wood","willow_wood","Willow Wood"},
+				{"ethereal:bamboo_block","ethereal_bamboo_floor","bamboo_block","Bamboo Block"},
+				{"ethereal:banana_wood","ethereal_banana_wood","banana_wood","Banana Wood"},
+				{"ethereal:birch_wood","moretrees_birch_wood","birch_wood","Birch Wood"},
+				{"ethereal:frost_wood","ethereal_frost_wood","frost_wood","Frost Wood"},
+				{"ethereal:mushroom_trunk","ethereal_mushroom_trunk","mushroom_trunk","Mushroom Trunk"},
+				{"ethereal:olive_wood","ethereal_olive_wood","olive_wood","Olive Wood"},
+				{"ethereal:palm_wood","moretrees_palm_wood","palm_wood","Palm Wood"},
+				{"ethereal:redwood_wood","ethereal_redwood_wood","redwood_wood","Redwood Wood"},
+				{"ethereal:sakura_wood","ethereal_sakura_wood","sakura_wood","Sakura Wood"},
+				{"ethereal:willow_wood","ethereal_willow_wood","willow_wood","Willow Wood"},
+				{"ethereal:yellow_wood","ethereal_yellow_wood","yellow_wood","Yellow Wood"},
 				}
 
 for i in ipairs(wood_mat) do
