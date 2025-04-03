@@ -287,7 +287,7 @@ minetest.register_node("myfurniture:"..wtype.."_tv_stand", {
 minetest.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
 	description = wdesc.." Kitchen Cabinet",
 	tiles = {
-			"myfurniture_kitchen_cabinet_top.png",
+			"myfurniture_kitchen_cabinet_top_"..wimg..".png",
 			wimg..".png",
 			wimg..".png",
 			wimg..".png",
