@@ -383,9 +383,9 @@ end
 minetest.register_craft({
 		output = 'myfurniture:machine',
 		recipe = {
-			{'default:tree', 'default:tree', 'default:tree'},
-			{'default:tree', 'default:tree', 'default:tree'},
-			{'default:tree', "default:tree", 'default:tree'},		
+			{'group:tree', 'group:tree', 'group:tree'},
+			{'group:tree', 'group:tree', 'group:tree'},
+			{'group:tree', "group:tree", 'group:tree'},		
 		},
 })
 
