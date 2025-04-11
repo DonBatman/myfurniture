@@ -71,34 +71,40 @@ on_construct = function(pos)
 		"label[7,1.5;Input:]"..
 		"label[7,3.5;Output:]"..
 		
-		"label[1,1;Pick Your Furniture]"..
+		"label[1,0.5;Pick Your Furniture]"..
 		--row 1
-		"image_button[1,2;1,1;myfurniture_mach1.png;furn1; ]"..
-		"image_button[2,2;1,1;myfurniture_mach2.png;furn2; ]"..
-		"image_button[3,2;1,1;myfurniture_mach3.png;furn3; ]"..
-		"image_button[4,2;1,1;myfurniture_mach4.png;furn4; ]"..
-		"image_button[5,2;1,1;myfurniture_mach5.png;furn5; ]"..
-		"image_button[6,2;1,1;myfurniture_mach6.png;furn6; ]"..
+		"image_button[1,1.5;1,1;myfurniture_mach1.png;furn1; ]"..
+		"image_button[2,1.5;1,1;myfurniture_mach2.png;furn2; ]"..
+		"image_button[3,1.5;1,1;myfurniture_mach3.png;furn3; ]"..
+		"image_button[4,1.5;1,1;myfurniture_mach4.png;furn4; ]"..
+		"image_button[5,1.5;1,1;myfurniture_mach5.png;furn5; ]"..
+		"image_button[6,1.5;1,1;myfurniture_mach6.png;furn6; ]"..
 		--row 2
-		"image_button[1,3;1,1;myfurniture_mach7.png;furn7; ]"..
-		"image_button[2,3;1,1;myfurniture_mach8.png;furn8; ]"..
-		"image_button[3,3;1,1;myfurniture_mach9.png;furn9; ]"..
-		"image_button[4,3;1,1;myfurniture_mach10.png;furn10; ]"..
-		"image_button[5,3;1,1;myfurniture_mach11.png;furn11; ]"..
-		"image_button[6,3;1,1;myfurniture_mach12.png;furn12; ]"..
+		"image_button[1,2.5;1,1;myfurniture_mach7.png;furn7; ]"..
+		"image_button[2,2.5;1,1;myfurniture_mach8.png;furn8; ]"..
+		"image_button[3,2.5;1,1;myfurniture_mach9.png;furn9; ]"..
+		"image_button[4,2.5;1,1;myfurniture_mach10.png;furn10; ]"..
+		"image_button[5,2.5;1,1;myfurniture_mach11.png;furn11; ]"..
+		"image_button[6,2.5;1,1;myfurniture_mach12.png;furn12; ]"..
 		--row 3
-		"image_button[1,4;1,1;myfurniture_mach13.png;furn13; ]"..
-		"image_button[2,4;1,1;myfurniture_mach14.png;furn14; ]"..
-		"image_button[3,4;1,1;myfurniture_mach15.png;furn15; ]"..
-		"image_button[4,4;1,1;myfurniture_mach16.png;furn16; ]"..
-		"image_button[5,4;1,1;myfurniture_mach17.png;furn17; ]"..
-		"image_button[6,4;1,1;myfurniture_mach22.png;furn18; ]"..
+		"image_button[1,3.5;1,1;myfurniture_mach13.png;furn13; ]"..
+		"image_button[2,3.5;1,1;myfurniture_mach14.png;furn14; ]"..
+		"image_button[3,3.5;1,1;myfurniture_mach15.png;furn15; ]"..
+		"image_button[4,3.5;1,1;myfurniture_mach16.png;furn16; ]"..
+		"image_button[5,3.5;1,1;myfurniture_mach17.png;furn17; ]"..
+		"image_button[6,3.5;1,1;myfurniture_mach22.png;furn18; ]"..
 		--row 4
-		"image_button[1,5;1,1;myfurniture_mach23.png;furn19; ]"..
-		"image_button[2,5;1,1;myfurniture_mach18.png;pic1; ]"..
-		"image_button[3,5;1,1;myfurniture_mach19.png;pic2; ]"..
-		"image_button[4,5;1,1;myfurniture_mach20.png;pic3; ]"..
-		"image_button[5,5;1,1;myfurniture_mach21.png;pic4; ]"..
+		"image_button[1,4.5;1,1;myfurniture_mach23.png;furn19; ]"..
+		"image_button[2,4.5;1,1;myfurniture_mach18.png;pic1; ]"..
+		"image_button[3,4.5;1,1;myfurniture_mach19.png;pic2; ]"..
+		"image_button[4,4.5;1,1;myfurniture_mach20.png;pic3; ]"..
+		"image_button[5,4.5;1,1;myfurniture_mach21.png;pic4; ]"..
+		"image_button[6,4.5;1,1;myfurniture_mach24.png;furn20; ]"..
+		--row 5
+		"image_button[1,5.5;1,1;myfurniture_mach25.png;furn21; ]"..
+		"image_button[2,5.5;1,1;myfurniture_mach26.png;furn22; ]"..
+		"image_button[3,5.5;1,1;myfurniture_mach27.png;furn23; ]"..
+		"image_button[4,5.5;1,1;myfurniture_mach28.png;furn24; ]"..
 
 		"list[current_player;main;1,7;8,4;]")
 	meta:set_string("infotext", "Furniture Machine")
@@ -134,6 +140,11 @@ or fields["pic1"]
 or fields["pic2"]
 or fields["pic3"]
 or fields["pic4"]
+or fields["furn20"]
+or fields["furn21"]
+or fields["furn22"]
+or fields["furn23"]
+or fields["furn24"]
 then
 
 	local ingotstack = inv:get_stack("ingot", 1)
@@ -292,6 +303,13 @@ local wood_mat = {
 			make_ok = "1"
 		end
 	end
+
+	if fields["furn20"] then
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_shelf"
+			make_ok = "1"
+		end
+	end
 end--ends ipairs
 	if fields["pic1"] then
 			if
@@ -387,6 +405,54 @@ end--ends ipairs
 			ingotstack:get_name()=="default:junglewood" then
 			make_ok = "1"
 			shape = "myfurniture:sofa_right"
+		end
+	end
+
+	if fields["furn21"] then
+		if
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:vase"
+		end
+	end
+
+	if fields["furn22"] then
+		if
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:toilet"
+		end
+	end
+
+	if fields["furn23"] then
+		if
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:bathroom_sink"
+		end
+	end
+
+	if fields["furn24"] then
+		if
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:tub"
 		end
 	end
 

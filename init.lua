@@ -696,4 +696,207 @@ minetest.register_node("myfurniture:"..wtype.."_bench", {
 		}
 	}
 })
+--Bench
+minetest.register_node("myfurniture:"..wtype.."_shelf", {
+	description = wdesc.." Shelf",
+	tiles = {
+			wimg..".png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, 0.375, 0, 0.5, 0.5, 0.5},
+			{0.25, 0.25, 0.125, 0.375, 0.375, 0.5},
+			{0.25, 0.125, 0.25, 0.375, 0.375, 0.5},
+			{0.25, 0, 0.375, 0.375, 0.25, 0.5},
+			{-0.375, 0.25, 0.125, -0.25, 0.375, 0.5},
+			{-0.375, 0.125, 0.25, -0.25, 0.375, 0.5},
+			{-0.375, 0, 0.375, -0.25, 0.25, 0.5},
+		}
+	}
+})
 end
+--Vase
+minetest.register_node("myfurniture:vase", {
+	description = "Vase",
+	tiles = {
+			"myfurniture_vase_top.png",
+			"myfurniture_vase_bottom.png",
+			"myfurniture_vase_side.png",
+			"myfurniture_vase_side.png",
+			"myfurniture_vase_side.png",
+			"myfurniture_vase_side.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.125, -0.5, 0, 0.125, 0.0625, 0.375},
+			{-0.1875, -0.5, 0.0625, 0.1875, 0.0625, 0.3125},
+			{-0.0625, -0.5, 0.1875, 0, 0.5, 0.25},
+			{-0.125, 0.3125, 0.125, 0.0625, 0.5, 0.3125},
+		}
+	}
+})
+--Toilet
+minetest.register_node("myfurniture:toilet", {
+	description = "toilet",
+	tiles = {
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.3125, -0.5, -0.25, 0.0625, -0.1875, 0.3125},
+			{-0.375, -0.1875, -0.375, 0.125, 0.125, 0.375},
+			{-0.25, -0.1875, -0.5, 0, 0.125, 0.5},
+			{-0.3125, -0.1875, -0.4375, 0.0625, 0.125, 0.4375},
+			{-0.5, 0.125, 0.1875, 0.25, 0.5, 0.5},
+			{-0.5, 0.375, 0.125, -0.3125, 0.4375, 0.1875},
+		}
+	}
+})
+
+--Bathroom Sink
+minetest.register_node("myfurniture:bathroom_sink", {
+	description = "toilet",
+	tiles = {
+			"myfurniture_brsink_top.png",
+			"myfurniture_toilet.png",
+			"myfurniture_brsink_side.png",
+			"myfurniture_brsink_side.png",
+			"myfurniture_toilet.png",
+			"myfurniture_brsink_front.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.1875, 0.5, 0.375, 0.5},
+			{-0.5, 0.375, 0.375, 0.5, 0.5, 0.5},
+			{0.0625, -0.3125, -0.25, 0.4375, 0.25, -0.1875},
+			{-0.4375, -0.3125, -0.25, -0.0625, 0.25, -0.1875},
+			{-0.1875, 0.375, 0.1875, 0.1875, 0.4375, 0.3125},
+			{0.0625, 0.375, 0.1875, 0.1875, 0.5, 0.3125},
+			{-0.1875, 0.375, 0.1875, -0.0625, 0.5, 0.3125},
+			{-0.0625, 0.4375, 0.0625, 0.0625, 0.5, 0.3125},
+		}
+	},	
+
+})
+
+-- Tub
+minetest.register_node("myfurniture:tub", {
+	description = "tub",
+	tiles = {
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			},
+	inventory_image = "myfurniture_tub_inv.png",
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, 0.3125, 0.5, 0.5, 0.5},
+			{-0.5, -0.5, -0.5, 0.5, 0.5, -0.3125},
+			{-0.5, -0.5, -0.5, -0.3125, 0.5, 0.5},
+			{-0.5, -0.5, -0.5, 0.5, -0.3125, 0.5},
+		}
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 1.5, 0.5, 0.5},
+		}
+	},
+	
+	after_place_node = function(pos, placer)
+		local dir = placer:get_look_dir()
+		local right_pos = vector.new(pos)
+		if math.abs(dir.x) < math.abs(dir.z) then
+			right_pos.x = right_pos.x+dir.z/math.abs(dir.z)
+		else
+			right_pos.z = right_pos.z-dir.x/math.abs(dir.x)
+		end
+		local right_node = minetest.get_node(right_pos)
+		if right_node.name == "air" then
+    		minetest.set_node(right_pos, {name="myfurniture:tub2",param2 = minetest.dir_to_facedir(placer:get_look_dir())})
+    	else
+    		minetest.chat_send_player(place,"Not enough room")
+    		return
+		end
+	end,
+	after_destruct = function(pos)
+		if minetest.get_node({x=pos.x + 1, y=pos.y, z=pos.z}).name == "myfurniture:tub2" then
+			minetest.set_node({x=pos.x + 1, y=pos.y, z=pos.z}, {name="air"})
+		end
+		if minetest.get_node({x=pos.x - 1, y=pos.y, z=pos.z}).name == "myfurniture:tub2" then
+			minetest.set_node({x=pos.x - 1, y=pos.y, z=pos.z}, {name="air"})
+		end
+		if minetest.get_node({x=pos.x, y=pos.y, z=pos.z + 1}).name == "myfurniture:tub2" then
+			minetest.set_node({x=pos.x, y=pos.y, z=pos.z + 1}, {name="air"})
+		end
+		if minetest.get_node({x=pos.x, y=pos.y, z=pos.z - 1}).name == "myfurniture:tub2" then
+			 minetest.set_node({x=pos.x, y=pos.y, z=pos.z - 1}, {name="air"})
+		end
+	end,
+	
+})
+
+-- Tub
+minetest.register_node("myfurniture:tub2", {
+--	description = "tub2",
+	tiles = {
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png^[transformFx",
+			"myfurniture_toilet.png",
+			"myfurniture_toilet.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, 0.3125, 0.5, 0.5, 0.5},
+			{-0.5, -0.5, -0.5, 0.5, 0.5, -0.3125},
+			{-0.5, -0.5, -0.5, 0.5, -0.3125, 0.5},
+			{0.3125, -0.5, -0.5, 0.5, 0.5, 0.5},
+		}
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{0, 0, 0, 0, 0, 0},
+		}
+	},
+})
