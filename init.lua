@@ -1,6 +1,14 @@
 
-dofile(minetest.get_modpath("myfurniture").."/machine.lua")
-
+dofile(core.get_modpath("myfurniture").."/machine.lua")
+if core.get_modpath("my_door_wood") then
+	dofile(core.get_modpath("myfurniture").."/my_door_wood.lua")
+end
+if core.get_modpath("moretrees") then
+	dofile(core.get_modpath("myfurniture").."/moretrees.lua")
+end
+if core.get_modpath("ethereal") then
+	dofile(core.get_modpath("myfurniture").."/ethereal.lua")
+end
 
 local wood_mat = {
 				{"default:wood","default_wood","wood","Apple Wood"},
@@ -8,37 +16,6 @@ local wood_mat = {
 				{"default:aspen_wood","default_aspen_wood","aspen_wood","Aspen Wood"},
 				{"default:pine_wood","default_pine_wood","pine_wood","Pine Wood"},
 				{"default:junglewood","default_junglewood","junglewood","Jungle Wood"},
-				{"my_door_wood:wood_black","mydoors_black_wood","black_wood","Black Wood"},
-				{"my_door_wood:wood_brown","mydoors_brown_wood","brown_wood","Brown Wood"},
-				{"my_door_wood:wood_dark_grey","mydoors_dark_grey_wood","dark_grey_wood","Dark Grey Wood"},
-				{"my_door_wood:wood_grey","mydoors_grey_wood","grey_wood","Grey Wood"},
-				{"my_door_wood:wood_red","mydoors_red_wood","red_wood","Red Wood"},
-				{"my_door_wood:wood_white","mydoors_white_wood","white_wood","White Wood"},
-				{"my_door_wood:wood_yellow","mydoors_yellow_wood","yellow_wood","Yellow Wood"},
-				{"moretrees:apple_tree_planks","moretrees_apple_tree_wood","apple_tree_wood","Apple Tree Wood"},
-				{"moretrees:beech_planks","moretrees_beech_wood","beech_wood","Beech Wood"},
-				{"moretrees:birch_planks","moretrees_birch_wood","birch_wood","Birch Wood"},
-				{"moretrees:cedar_planks","moretrees_cedar_wood","cedar_wood","Cedar Wood"},
-				{"moretrees:date_palm_planks","moretrees_date_palm_wood","date_palm_wood","Date Palm Wood"},
-				{"moretrees:fir_planks","moretrees_fir_wood","fir_wood","Fir Wood"},
-				{"moretrees:oak_planks","moretrees_oak_wood","oak_wood","Oak Wood"},
-				{"moretrees:palm_planks","moretrees_palm_wood","palm_wood","Palm Wood"},
-				{"moretrees:poplar_planks","moretrees_poplar_wood","poplar_wood","Poplar Wood"},
-				{"moretrees:rubber_tree_planks","moretrees_rubber_tree_wood","rubber_tree_wood","Rubber Tree Wood"},
-				{"moretrees:sequoia_planks","moretrees_sequoia_wood","sequoia_wood","Sequoia Wood"},
-				{"moretrees:spruce_planks","moretrees_spruce_wood","spruce_wood","Spruce Wood"},
-				{"moretrees:willow_planks","moretrees_willow_wood","willow_wood","Willow Wood"},
-				{"ethereal:bamboo_block","ethereal_bamboo_floor","bamboo_block","Bamboo Block"},
-				{"ethereal:banana_wood","ethereal_banana_wood","banana_wood","Banana Wood"},
-				{"ethereal:birch_wood","moretrees_birch_wood","birch_wood","Birch Wood"},
-				{"ethereal:frost_wood","ethereal_frost_wood","frost_wood","Frost Wood"},
-				{"ethereal:mushroom_trunk","ethereal_mushroom_trunk","mushroom_trunk","Mushroom Trunk"},
-				{"ethereal:olive_wood","ethereal_olive_wood","olive_wood","Olive Wood"},
-				{"ethereal:palm_wood","moretrees_palm_wood","palm_wood","Palm Wood"},
-				{"ethereal:redwood_wood","ethereal_redwood_wood","redwood_wood","Redwood Wood"},
-				{"ethereal:sakura_wood","ethereal_sakura_wood","sakura_wood","Sakura Wood"},
-				{"ethereal:willow_wood","ethereal_willow_wood","willow_wood","Willow Wood"},
-				{"ethereal:yellow_wood","ethereal_yellow_wood","yellow_wood","Yellow Wood"},
 				}
 
 for i in ipairs(wood_mat) do
