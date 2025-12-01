@@ -22,7 +22,7 @@ for i in ipairs(wood_mat) do
 	local wtype = wood_mat[i][3]
 	local wdesc = wood_mat[i][4]
 
-function minetest.get_myfurniture_formspec(pos)
+function core.get_myfurniture_formspec(pos)
     local spos = pos.x .. "," .. pos.y .. "," ..pos.z
     local formspec =
         "size[9,7]"..
@@ -30,7 +30,7 @@ function minetest.get_myfurniture_formspec(pos)
         "list[current_player;main;0.5,3;8,4;]"
     return formspec
 end
-function minetest.get_myfurniture_formspec2(pos)
+function core.get_myfurniture_formspec2(pos)
     local spos = pos.x .. "," .. pos.y .. "," ..pos.z
     local formspec =
         "size[9,7]"..
@@ -38,7 +38,7 @@ function minetest.get_myfurniture_formspec2(pos)
         "list[current_player;main;0.5,3;8,4;]"
     return formspec
 end
-function minetest.get_myfurniture_formspec3(pos)
+function core.get_myfurniture_formspec3(pos)
     local spos = pos.x .. "," .. pos.y .. "," ..pos.z
     local formspec =
         "size[9,7]"..
@@ -48,7 +48,7 @@ function minetest.get_myfurniture_formspec3(pos)
 end
 
 --Table
-minetest.register_node("myfurniture:"..wtype.."_dinning_table", {
+core.register_node("myfurniture:"..wtype.."_dinning_table", {
 	description = wdesc.." Dinning Table",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -67,7 +67,7 @@ minetest.register_node("myfurniture:"..wtype.."_dinning_table", {
 		},
 })
 --Chair
-minetest.register_node("myfurniture:"..wtype.."_chair", {
+core.register_node("myfurniture:"..wtype.."_chair", {
 	description = wdesc.." Chair",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -87,7 +87,7 @@ minetest.register_node("myfurniture:"..wtype.."_chair", {
 		},
 })
 --Arm Chair
-minetest.register_node("myfurniture:armchair", {
+core.register_node("myfurniture:armchair", {
 	description = "Arm Chair",
 	tiles = {"wool_dark_grey.png"},
 	drawtype = "nodebox",
@@ -105,7 +105,7 @@ minetest.register_node("myfurniture:armchair", {
 		},
 })
 --Bookshelf
-minetest.register_node("myfurniture:"..wtype.."_bookshelf", {
+core.register_node("myfurniture:"..wtype.."_bookshelf", {
 	description = wdesc.." Bookshelf",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -125,7 +125,7 @@ minetest.register_node("myfurniture:"..wtype.."_bookshelf", {
 		},
 })
 --Bookshelf Top
-minetest.register_node("myfurniture:"..wtype.."_bookshelf_top", {
+core.register_node("myfurniture:"..wtype.."_bookshelf_top", {
 	description = wdesc.." Bookshelf Top",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -144,7 +144,7 @@ minetest.register_node("myfurniture:"..wtype.."_bookshelf_top", {
 		},
 })
 --Cabinet
-minetest.register_node("myfurniture:"..wtype.."_cabinet", {
+core.register_node("myfurniture:"..wtype.."_cabinet", {
 	description = wdesc.." Cabinet",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -164,7 +164,7 @@ minetest.register_node("myfurniture:"..wtype.."_cabinet", {
 		},
 })
 --Desk
-minetest.register_node("myfurniture:"..wtype.."_desk", {
+core.register_node("myfurniture:"..wtype.."_desk", {
 	description = wdesc.." Desk",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -183,7 +183,7 @@ minetest.register_node("myfurniture:"..wtype.."_desk", {
 		},
 })
 --End Table
-minetest.register_node("myfurniture:"..wtype.."_end_table", {
+core.register_node("myfurniture:"..wtype.."_end_table", {
 	description = wdesc.." End Table",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -202,7 +202,7 @@ minetest.register_node("myfurniture:"..wtype.."_end_table", {
 		},
 })
 --Sofa Right
-minetest.register_node("myfurniture:sofa_right", {
+core.register_node("myfurniture:sofa_right", {
 	description = "Sofa - Right",
 	tiles = {"wool_dark_grey.png"},
 	drawtype = "nodebox",
@@ -219,7 +219,7 @@ minetest.register_node("myfurniture:sofa_right", {
 		},
 })
 --Sofa Left
-minetest.register_node("myfurniture:sofa_left", {
+core.register_node("myfurniture:sofa_left", {
 	description = "Sofa - Left",
 	tiles = {"wool_dark_grey.png"},
 	drawtype = "nodebox",
@@ -236,7 +236,7 @@ minetest.register_node("myfurniture:sofa_left", {
 		},
 })
 --Sofa Middle
-minetest.register_node("myfurniture:sofa_middle", {
+core.register_node("myfurniture:sofa_middle", {
 	description = "Sofa - Middle",
 	tiles = {"wool_dark_grey.png"},
 	drawtype = "nodebox",
@@ -252,7 +252,7 @@ minetest.register_node("myfurniture:sofa_middle", {
 		},
 })
 --Stool
-minetest.register_node("myfurniture:"..wtype.."_stool", {
+core.register_node("myfurniture:"..wtype.."_stool", {
 	description = wdesc.." Stool",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -271,7 +271,7 @@ minetest.register_node("myfurniture:"..wtype.."_stool", {
 		},
 })
 --TV Stand
-minetest.register_node("myfurniture:"..wtype.."_tv_stand", {
+core.register_node("myfurniture:"..wtype.."_tv_stand", {
 	description = wdesc.." TV Stand",
 	tiles = {wimg..".png"},
 	drawtype = "nodebox",
@@ -290,7 +290,7 @@ minetest.register_node("myfurniture:"..wtype.."_tv_stand", {
 })
 
 --Kitchen Cabinet
-minetest.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
+core.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
 	description = wdesc.." Kitchen Cabinet",
 	tiles = {
 			"myfurniture_kitchen_cabinet_top_"..wimg..".png",
@@ -313,7 +313,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
 		}
 	},
 	on_construct = function(pos)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         meta:set_string("infotext", "Kitchen Cabinet")
         meta:set_string("owner", "")
         local inv = meta:get_inventory()
@@ -322,7 +322,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
 
     can_dig = function(pos,player)
 
-	local meta = minetest.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local meta = core.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
 	local inv = meta:get_inventory()
 	if not inv:is_empty("ingot") then
 		return false
@@ -332,7 +332,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
 	
 
 
-        local meta = minetest.get_meta(pos);
+        local meta = core.get_meta(pos);
         local inv = meta:get_inventory()
 
         return inv:is_empty("main")
@@ -341,30 +341,30 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
 
     end,
     allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
 
         return count
     end,
     allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         return stack:get_count()
     end,
     allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         return stack:get_count()
     end,
 
     on_rightclick = function(pos, node, clicker)
-        local meta = minetest.get_meta(pos)
-            minetest.show_formspec(
+        local meta = core.get_meta(pos)
+            core.show_formspec(
                 clicker:get_player_name(),
                 "myfurniture:"..wtype.."_kitchen_cabinet",
-                minetest.get_myfurniture_formspec(pos)
+                core.get_myfurniture_formspec(pos)
             )
     end,
 })
 --Kitchen Upper Cabinet
-minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
+core.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
 	description = wdesc.." Kitchen Upper Cabinet",
 	tiles = {
 			wimg..".png",
@@ -387,7 +387,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
 		}
 	},
 		on_construct = function(pos)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         meta:set_string("infotext", "Kitchen Cabinet")
         meta:set_string("owner", "")
         local inv = meta:get_inventory()
@@ -396,7 +396,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
 
     can_dig = function(pos,player)
 
-	local meta = minetest.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local meta = core.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
 	local inv = meta:get_inventory()
 	if not inv:is_empty("ingot") then
 		return false
@@ -406,7 +406,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
 	
 
 
-        local meta = minetest.get_meta(pos);
+        local meta = core.get_meta(pos);
         local inv = meta:get_inventory()
 
         return inv:is_empty("main")
@@ -415,30 +415,30 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
 
     end,
     allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
 
         return count
     end,
     allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         return stack:get_count()
     end,
     allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         return stack:get_count()
     end,
 
     on_rightclick = function(pos, node, clicker)
-        local meta = minetest.get_meta(pos)
-            minetest.show_formspec(
+        local meta = core.get_meta(pos)
+            core.show_formspec(
                 clicker:get_player_name(),
                 "myfurniture:"..wtype.."_kitchen_cabinet",
-                minetest.get_myfurniture_formspec2(pos)
+                core.get_myfurniture_formspec2(pos)
             )
     end,
 })
 --Kitchen Corner Cabinet
-minetest.register_node("myfurniture:"..wtype.."_kitchen_corner_cabinet", {
+core.register_node("myfurniture:"..wtype.."_kitchen_corner_cabinet", {
 	description = wdesc.." Kitchen Upper Corner Cabinet",
 	tiles = {
 			"myfurniture_dishwasher_top.png",
@@ -454,7 +454,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_corner_cabinet", {
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 })
 --Kitchen Upper Corner Cabinet
-minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
+core.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
 	description = wdesc.." Kitchen Upper Corner Cabinet",
 	tiles = {
 			wimg..".png",
@@ -478,7 +478,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
 		}
 	},
 		on_construct = function(pos)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         meta:set_string("infotext", "Kitchen Cabinet")
         meta:set_string("owner", "")
         local inv = meta:get_inventory()
@@ -487,7 +487,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
 
     can_dig = function(pos,player)
 
-	local meta = minetest.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local meta = core.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
 	local inv = meta:get_inventory()
 	if not inv:is_empty("ingot") then
 		return false
@@ -497,7 +497,7 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
 	
 
 
-        local meta = minetest.get_meta(pos);
+        local meta = core.get_meta(pos);
         local inv = meta:get_inventory()
 
         return inv:is_empty("main")
@@ -506,32 +506,32 @@ minetest.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
 
     end,
     allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
 
         return count
     end,
     allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         return stack:get_count()
     end,
     allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         return stack:get_count()
     end,
 
     on_rightclick = function(pos, node, clicker)
-        local meta = minetest.get_meta(pos)
-            minetest.show_formspec(
+        local meta = core.get_meta(pos)
+            core.show_formspec(
                 clicker:get_player_name(),
                 "myfurniture:"..wtype.."_kitchen_cabinet",
-                minetest.get_myfurniture_formspec3(pos)
+                core.get_myfurniture_formspec3(pos)
             )
     end,
 
 })
 
 --Pictures
-minetest.register_node("myfurniture:picture1", {
+core.register_node("myfurniture:picture1", {
 	description = "Picture",
 	tiles = {
 			"myfurniture_pictures.png",
@@ -556,7 +556,7 @@ minetest.register_node("myfurniture:picture1", {
 		}
 	}
 })
-minetest.register_node("myfurniture:picture2", {
+core.register_node("myfurniture:picture2", {
 	description = "Picture",
 	tiles = {
 			"myfurniture_pictures.png",
@@ -581,7 +581,7 @@ minetest.register_node("myfurniture:picture2", {
 		}
 	}
 })
-minetest.register_node("myfurniture:picture3", {
+core.register_node("myfurniture:picture3", {
 	description = "Picture",
 	tiles = {
 			"myfurniture_pictures.png",
@@ -606,7 +606,7 @@ minetest.register_node("myfurniture:picture3", {
 		}
 	}
 })
-minetest.register_node("myfurniture:picture4", {
+core.register_node("myfurniture:picture4", {
 	description = "Picture",
 	tiles = {
 			"myfurniture_pictures.png",
@@ -632,7 +632,7 @@ minetest.register_node("myfurniture:picture4", {
 	}
 })
 --Chest Of Drawers
-minetest.register_node("myfurniture:"..wtype.."_chest_of_drawers", {
+core.register_node("myfurniture:"..wtype.."_chest_of_drawers", {
 	description = wdesc.." Chest of Drawers",
 	tiles = {
 			wimg..".png",
@@ -653,7 +653,7 @@ minetest.register_node("myfurniture:"..wtype.."_chest_of_drawers", {
 	}
 })
 --Bench
-minetest.register_node("myfurniture:"..wtype.."_bench", {
+core.register_node("myfurniture:"..wtype.."_bench", {
 	description = wdesc.." Bench",
 	tiles = {
 			wimg..".png",
@@ -672,7 +672,7 @@ minetest.register_node("myfurniture:"..wtype.."_bench", {
 	}
 })
 --Bench
-minetest.register_node("myfurniture:"..wtype.."_shelf", {
+core.register_node("myfurniture:"..wtype.."_shelf", {
 	description = wdesc.." Shelf",
 	tiles = {
 			wimg..".png",
@@ -696,7 +696,7 @@ minetest.register_node("myfurniture:"..wtype.."_shelf", {
 })
 end
 --Vase
-minetest.register_node("myfurniture:vase", {
+core.register_node("myfurniture:vase", {
 	description = "Vase",
 	tiles = {
 			"myfurniture_vase_top.png",
@@ -721,7 +721,7 @@ minetest.register_node("myfurniture:vase", {
 	}
 })
 --Toilet
-minetest.register_node("myfurniture:toilet", {
+core.register_node("myfurniture:toilet", {
 	description = "toilet",
 	tiles = {
 			"myfurniture_toilet.png",
@@ -749,7 +749,7 @@ minetest.register_node("myfurniture:toilet", {
 })
 
 --Bathroom Sink
-minetest.register_node("myfurniture:bathroom_sink", {
+core.register_node("myfurniture:bathroom_sink", {
 	description = "toilet",
 	tiles = {
 			"myfurniture_brsink_top.png",
@@ -780,7 +780,7 @@ minetest.register_node("myfurniture:bathroom_sink", {
 })
 
 -- Tub
-minetest.register_node("myfurniture:tub", {
+core.register_node("myfurniture:tub", {
 	description = "tub",
 	tiles = {
 			"myfurniture_toilet.png",
@@ -819,33 +819,33 @@ minetest.register_node("myfurniture:tub", {
 		else
 			right_pos.z = right_pos.z-dir.x/math.abs(dir.x)
 		end
-		local right_node = minetest.get_node(right_pos)
+		local right_node = core.get_node(right_pos)
 		if right_node.name == "air" then
-    		minetest.set_node(right_pos, {name="myfurniture:tub2",param2 = minetest.dir_to_facedir(placer:get_look_dir())})
+    		core.set_node(right_pos, {name="myfurniture:tub2",param2 = core.dir_to_facedir(placer:get_look_dir())})
     	else
-    		minetest.chat_send_player(place,"Not enough room")
+    		core.chat_send_player(place,"Not enough room")
     		return
 		end
 	end,
 	after_destruct = function(pos)
-		if minetest.get_node({x=pos.x + 1, y=pos.y, z=pos.z}).name == "myfurniture:tub2" then
-			minetest.set_node({x=pos.x + 1, y=pos.y, z=pos.z}, {name="air"})
+		if core.get_node({x=pos.x + 1, y=pos.y, z=pos.z}).name == "myfurniture:tub2" then
+			core.set_node({x=pos.x + 1, y=pos.y, z=pos.z}, {name="air"})
 		end
-		if minetest.get_node({x=pos.x - 1, y=pos.y, z=pos.z}).name == "myfurniture:tub2" then
-			minetest.set_node({x=pos.x - 1, y=pos.y, z=pos.z}, {name="air"})
+		if core.get_node({x=pos.x - 1, y=pos.y, z=pos.z}).name == "myfurniture:tub2" then
+			core.set_node({x=pos.x - 1, y=pos.y, z=pos.z}, {name="air"})
 		end
-		if minetest.get_node({x=pos.x, y=pos.y, z=pos.z + 1}).name == "myfurniture:tub2" then
-			minetest.set_node({x=pos.x, y=pos.y, z=pos.z + 1}, {name="air"})
+		if core.get_node({x=pos.x, y=pos.y, z=pos.z + 1}).name == "myfurniture:tub2" then
+			core.set_node({x=pos.x, y=pos.y, z=pos.z + 1}, {name="air"})
 		end
-		if minetest.get_node({x=pos.x, y=pos.y, z=pos.z - 1}).name == "myfurniture:tub2" then
-			 minetest.set_node({x=pos.x, y=pos.y, z=pos.z - 1}, {name="air"})
+		if core.get_node({x=pos.x, y=pos.y, z=pos.z - 1}).name == "myfurniture:tub2" then
+			 core.set_node({x=pos.x, y=pos.y, z=pos.z - 1}, {name="air"})
 		end
 	end,
 	
 })
 
 -- Tub
-minetest.register_node("myfurniture:tub2", {
+core.register_node("myfurniture:tub2", {
 --	description = "tub2",
 	tiles = {
 			"myfurniture_toilet.png",

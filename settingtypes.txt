@@ -1,0 +1,3 @@
+myfurniture.my_door_wood (Use my_door_wood) bool true
+myfurniture.moretrees (Use moretrees) bool true
+myfurniture.ethereal (Use ethereal) bool true
