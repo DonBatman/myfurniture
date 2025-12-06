@@ -105,6 +105,7 @@ on_construct = function(pos)
 		"image_button[2,5.5;1,1;myfurniture_mach26.png;furn22; ]"..
 		"image_button[3,5.5;1,1;myfurniture_mach27.png;furn23; ]"..
 		"image_button[4,5.5;1,1;myfurniture_mach28.png;furn24; ]"..
+		"image_button[5,5.5;1,1;myfurniture_mach29.png;furn25; ]"..
 
 		"list[current_player;main;1,7;8,4;]")
 	meta:set_string("infotext", "Furniture Machine")
@@ -145,6 +146,7 @@ or fields["furn21"]
 or fields["furn22"]
 or fields["furn23"]
 or fields["furn24"]
+or fields["furn25"]
 then
 
 	local ingotstack = inv:get_stack("ingot", 1)
@@ -453,6 +455,18 @@ end--ends ipairs
 			ingotstack:get_name()=="default:junglewood" then
 			make_ok = "1"
 			shape = "myfurniture:tub"
+		end
+	end
+
+	if fields["furn25"] then
+		if
+			ingotstack:get_name()=="default:wood" or
+			ingotstack:get_name()=="default:pine_wood" or
+			ingotstack:get_name()=="default:aspen_wood" or
+			ingotstack:get_name()=="default:acacia_wood" or
+			ingotstack:get_name()=="default:junglewood" then
+			make_ok = "1"
+			shape = "myfurniture:mailbox"
 		end
 	end
 

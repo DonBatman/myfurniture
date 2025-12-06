@@ -1,5 +1,5 @@
-myfurniture = {}
 
+myfurniture = {}
 local my_door_wood = core.settings:get_bool("myfurniture.my_door_wood", true)
 local moretrees = core.settings:get_bool("myfurniture.moretrees", true)
 local ethereal = core.settings:get_bool("myfurniture.ethereal", true)
@@ -890,6 +890,14 @@ core.register_node("myfurniture:tub2", {
 	},
 })
 
+function core.get_myfurniture_formspec_mail(pos)
+    local spos = pos.x .. "," .. pos.y .. "," ..pos.z
+    local formspec =
+        "size[9,7]"..
+        "list[nodemeta:".. spos .. ";main;0.5,0.5;8,2;]"..
+        "list[current_player;main;0.5,3;8,4;]"
+    return formspec
+end
 -- Mailbox
 core.register_node("myfurniture:mailbox", {
 	description = "Mailbox",
@@ -898,7 +906,7 @@ core.register_node("myfurniture:mailbox", {
 	mesh = "myfurniture_mailbox.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -911,4 +919,87 @@ core.register_node("myfurniture:mailbox", {
 			{-0.25, -0.5, -0.25, 0.25, 0.5, 0.25},
 		}
 	},
+	on_construct = function(pos)
+        local meta = core.get_meta(pos)
+        meta:set_string("infotext", "Mailbox")
+        meta:set_string("owner", "")
+        local inv = meta:get_inventory()
+        inv:set_size("main", 9*7)
+    end,
+    can_dig = function(pos,player)
+	local meta = core.get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local inv = meta:get_inventory()
+	if not inv:is_empty("ingot") then
+		return false
+	elseif not inv:is_empty("res") then
+		return false
+	end
+        local meta = core.get_meta(pos);
+        local inv = meta:get_inventory()
+        return inv:is_empty("main")
+    end,
+    allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+        local meta = core.get_meta(pos)
+        return count
+    end,
+    allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+        local meta = core.get_meta(pos)
+        return stack:get_count()
+    end,
+    allow_metadata_inventory_take = function(pos, listname, index, stack, player)
+        local meta = core.get_meta(pos)
+        return stack:get_count()
+    end,
+    on_rightclick = function(pos, node, clicker)
+        local meta = core.get_meta(pos)
+        local timer = minetest.get_node_timer(pos)
+		timer:start(7)
+		minetest.swap_node(pos,{name = "myfurniture:mailbox_open", param2 = node.param2})
+            core.show_formspec(
+                clicker:get_player_name(),
+                "myfurniture:mailbox_open",
+                core.get_myfurniture_formspec_mail(pos)
+            )
+    end,
+	on_punch = function(pos, node, puncher, pointed_thing)
+	end,
 })
+-- Mailbox open
+core.register_node("myfurniture:mailbox_open", {
+	description = "Mailbox Open",
+	tiles = {"myfurniture_mailbox.png"},
+	drawtype = "mesh",
+	mesh = "myfurniture_mailbox_open.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.5, -0.25, 0.25, 0.5, 0.25},
+		}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.5, -0.25, 0.25, 0.5, 0.25},
+		}
+	},
+    can_dig = function(pos,player)
+	local meta = core.get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local inv = meta:get_inventory()
+	if not inv:is_empty("ingot") then
+		return false
+	elseif not inv:is_empty("res") then
+		return false
+	end
+        local meta = core.get_meta(pos);
+        local inv = meta:get_inventory()
+        return inv:is_empty("main")
+    end,
+	on_timer = function(pos, elapsed)
+		local node = core.get_node(pos)
+		minetest.swap_node(pos,{name = "myfurniture:mailbox", param2 = node.param2})
+	end,
+})
+
