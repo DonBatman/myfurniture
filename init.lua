@@ -65,11 +65,12 @@ end
 core.register_node("myfurniture:"..wtype.."_dinning_table", {
 	description = wdesc.." Dinning Table",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_table.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, 0.375, -0.5, 0.5, 0.5, 0.5},
@@ -84,11 +85,12 @@ core.register_node("myfurniture:"..wtype.."_dinning_table", {
 core.register_node("myfurniture:"..wtype.."_chair", {
 	description = wdesc.." Chair",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_chair.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.375, -0.125, -0.375, 0.375, 0, 0.375},
@@ -104,11 +106,12 @@ core.register_node("myfurniture:"..wtype.."_chair", {
 core.register_node("myfurniture:armchair", {
 	description = "Arm Chair",
 	tiles = {"wool_dark_grey.png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_armchair.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
@@ -122,11 +125,12 @@ core.register_node("myfurniture:armchair", {
 core.register_node("myfurniture:"..wtype.."_bookshelf", {
 	description = wdesc.." Bookshelf",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_bookshelf.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, 0, -0.4375, 0.5, 0.5},
@@ -142,11 +146,12 @@ core.register_node("myfurniture:"..wtype.."_bookshelf", {
 core.register_node("myfurniture:"..wtype.."_bookshelf_top", {
 	description = wdesc.." Bookshelf Top",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_bookshelf_top.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, 0, -0.4375, 0.5, 0.5},
@@ -161,19 +166,15 @@ core.register_node("myfurniture:"..wtype.."_bookshelf_top", {
 core.register_node("myfurniture:"..wtype.."_cabinet", {
 	description = wdesc.." Cabinet",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_cabinet.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, -0.4375, 0.5, 0.5},
-			{-0.5, -0.5, 0.4375, 0.5, 0.5, 0.5},
-			{0.4375, -0.5, -0.5, 0.5, 0.5, 0.5},
-			{-0.5, -0.375, -0.5, 0.5, -0.3125, 0.5},
-			{-0.5, 0.4375, -0.5, 0.5, 0.5, 0.5},
-			{-0.5, 0, -0.5, 0.5, 0.0625, 0.5},
+			{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
 			}
 		},
 })
@@ -181,11 +182,12 @@ core.register_node("myfurniture:"..wtype.."_cabinet", {
 core.register_node("myfurniture:"..wtype.."_desk", {
 	description = wdesc.." Desk",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_desk.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, -0.5, -0.4375, 0.5, 0.5},
@@ -200,11 +202,12 @@ core.register_node("myfurniture:"..wtype.."_desk", {
 core.register_node("myfurniture:"..wtype.."_end_table", {
 	description = wdesc.." End Table",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_coffee_table.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.125, -0.5, 0.5, 0, 0.5},
@@ -219,11 +222,12 @@ core.register_node("myfurniture:"..wtype.."_end_table", {
 core.register_node("myfurniture:sofa_right", {
 	description = "Sofa - Right",
 	tiles = {"wool_dark_grey.png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_sofa_right.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
@@ -236,11 +240,12 @@ core.register_node("myfurniture:sofa_right", {
 core.register_node("myfurniture:sofa_left", {
 	description = "Sofa - Left",
 	tiles = {"wool_dark_grey.png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_sofa_left.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
@@ -253,11 +258,29 @@ core.register_node("myfurniture:sofa_left", {
 core.register_node("myfurniture:sofa_middle", {
 	description = "Sofa - Middle",
 	tiles = {"wool_dark_grey.png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_sofa_middle.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
+			{-0.5, 0, 0.375, 0.5, 0.5, 0.5},
+			}
+		},
+})
+--Sofa Corner
+core.register_node("myfurniture:sofa_corner", {
+	description = "Sofa - Middle",
+	tiles = {"wool_dark_grey.png"},
+	drawtype = "mesh",
+	mesh = "myfurniture_sofa_corner.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
@@ -269,11 +292,12 @@ core.register_node("myfurniture:sofa_middle", {
 core.register_node("myfurniture:"..wtype.."_stool", {
 	description = wdesc.." Stool",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_stool.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.375, 0.375, -0.375, 0.375, 0.5, 0.375},
@@ -288,11 +312,12 @@ core.register_node("myfurniture:"..wtype.."_stool", {
 core.register_node("myfurniture:"..wtype.."_tv_stand", {
 	description = wdesc.." TV Stand",
 	tiles = {wimg..".png"},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_tv_stand.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, 0, -0.4375, 0, 0.5},
@@ -410,7 +435,7 @@ core.register_node("myfurniture:"..wtype.."_kitchen_upper_cabinet", {
 
     can_dig = function(pos,player)
 
-	local meta = core.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local meta = core.get_meta({x=pos.x,y=pos.y+1,z=pos.z});
 	local inv = meta:get_inventory()
 	if not inv:is_empty("ingot") then
 		return false
@@ -651,11 +676,12 @@ core.register_node("myfurniture:"..wtype.."_chest_of_drawers", {
 	tiles = {
 			wimg..".png",
 			},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_chest_of_drawers.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.375, -0.5, 0, -0.25, 0.125, 0.5},
@@ -672,16 +698,17 @@ core.register_node("myfurniture:"..wtype.."_bench", {
 	tiles = {
 			wimg..".png",
 			},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_bench.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
-			{-0.375, -0.5, 0, -0.25, 0.125, 0.5},
-			{0.25, -0.5, 0, 0.375, 0.125, 0.5},
-			{-0.5, 0, 0, 0.5, 0.125, 0.5},
+			{-0.375, -0.5, 0, -0.25, -0.125, 0.5},
+			{0.25, -0.5, 0, 0.375, -0.125, 0.5},
+			{-0.5, 0, 0, 0.5, -0.125, 0.5},
 		}
 	}
 })
@@ -691,11 +718,12 @@ core.register_node("myfurniture:"..wtype.."_shelf", {
 	tiles = {
 			wimg..".png",
 			},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_shelf.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, 0.375, 0, 0.5, 0.5, 0.5},
@@ -713,24 +741,17 @@ end
 core.register_node("myfurniture:vase", {
 	description = "Vase",
 	tiles = {
-			"myfurniture_vase_top.png",
-			"myfurniture_vase_bottom.png",
-			"myfurniture_vase_side.png",
-			"myfurniture_vase_side.png",
-			"myfurniture_vase_side.png",
-			"myfurniture_vase_side.png",
+			"myfurniture_vase.png",
 			},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_vase.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1,falling_node = 1},
+	selection_box = {
 		type = "fixed",
 		fixed = {
-			{-0.125, -0.5, 0, 0.125, 0.0625, 0.375},
-			{-0.1875, -0.5, 0.0625, 0.1875, 0.0625, 0.3125},
-			{-0.0625, -0.5, 0.1875, 0, 0.5, 0.25},
-			{-0.125, 0.3125, 0.125, 0.0625, 0.5, 0.3125},
+			{-0.125, -0.5, 0.125, 0.125, 0.0625, 0.375},
 		}
 	}
 })
@@ -739,17 +760,13 @@ core.register_node("myfurniture:toilet", {
 	description = "toilet",
 	tiles = {
 			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
 			},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_toilet.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.3125, -0.5, -0.25, 0.0625, -0.1875, 0.3125},
@@ -766,18 +783,14 @@ core.register_node("myfurniture:toilet", {
 core.register_node("myfurniture:bathroom_sink", {
 	description = "toilet",
 	tiles = {
-			"myfurniture_brsink_top.png",
-			"myfurniture_toilet.png",
-			"myfurniture_brsink_side.png",
-			"myfurniture_brsink_side.png",
-			"myfurniture_toilet.png",
-			"myfurniture_brsink_front.png",
+			"myfurniture_bathroom_sink.png",
 			},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_bathroom_sink.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
+	selection_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, -0.1875, 0.5, 0.375, 0.5},
@@ -797,31 +810,23 @@ core.register_node("myfurniture:bathroom_sink", {
 core.register_node("myfurniture:tub", {
 	description = "tub",
 	tiles = {
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
+			"default_snow.png",
 			},
-	inventory_image = "myfurniture_tub_inv.png",
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_tub.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, 0.3125, 0.5, 0.5, 0.5},
-			{-0.5, -0.5, -0.5, 0.5, 0.5, -0.3125},
-			{-0.5, -0.5, -0.5, -0.3125, 0.5, 0.5},
-			{-0.5, -0.5, -0.5, 0.5, -0.3125, 0.5},
-		}
-	},
 	selection_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, 1.5, 0.5, 0.5},
+			{-0.5, -0.5, -0.5, 1.5, 0.4, 0.5},
+		}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 1.5, 0.4, 0.5},
 		}
 	},
 	
@@ -834,58 +839,104 @@ core.register_node("myfurniture:tub", {
 			right_pos.z = right_pos.z-dir.x/math.abs(dir.x)
 		end
 		local right_node = core.get_node(right_pos)
-		if right_node.name == "air" then
-    		core.set_node(right_pos, {name="myfurniture:tub2",param2 = core.dir_to_facedir(placer:get_look_dir())})
-    	else
-    		core.chat_send_player(place,"Not enough room")
+		if right_node.name ~= "air" then
+    		core.chat_send_player(placer:get_player_name(),"Not enough room")
+    		core.remove_node(pos)
     		return
-		end
-	end,
-	after_destruct = function(pos)
-		if core.get_node({x=pos.x + 1, y=pos.y, z=pos.z}).name == "myfurniture:tub2" then
-			core.set_node({x=pos.x + 1, y=pos.y, z=pos.z}, {name="air"})
-		end
-		if core.get_node({x=pos.x - 1, y=pos.y, z=pos.z}).name == "myfurniture:tub2" then
-			core.set_node({x=pos.x - 1, y=pos.y, z=pos.z}, {name="air"})
-		end
-		if core.get_node({x=pos.x, y=pos.y, z=pos.z + 1}).name == "myfurniture:tub2" then
-			core.set_node({x=pos.x, y=pos.y, z=pos.z + 1}, {name="air"})
-		end
-		if core.get_node({x=pos.x, y=pos.y, z=pos.z - 1}).name == "myfurniture:tub2" then
-			 core.set_node({x=pos.x, y=pos.y, z=pos.z - 1}, {name="air"})
 		end
 	end,
 	
 })
 
--- Tub
-core.register_node("myfurniture:tub2", {
---	description = "tub2",
+-- Med Cabinet
+core.register_node("myfurniture:med_cabinet", {
+	description = "Medicine Cabinet",
 	tiles = {
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png^[transformFx",
-			"myfurniture_toilet.png",
-			"myfurniture_toilet.png",
+			"myfurniture_medicine_cabinet.png",
 			},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "myfurniture_medicine_cabinet.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, 0.3125, 0.5, 0.5, 0.5},
-			{-0.5, -0.5, -0.5, 0.5, 0.5, -0.3125},
-			{-0.5, -0.5, -0.5, 0.5, -0.3125, 0.5},
-			{0.3125, -0.5, -0.5, 0.5, 0.5, 0.5},
-		}
-	},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
 	selection_box = {
 		type = "fixed",
 		fixed = {
-			{0, 0, 0, 0, 0, 0},
+			{-0.5, -0.5, 0.3125, 0.5, 0.5, 0.5},
+		}
+	},
+})
+-- Shower Taps
+core.register_node("myfurniture:shower_taps", {
+	description = "Shower Taps",
+	tiles = {
+			"default_clay.png",
+			},
+	drawtype = "mesh",
+	mesh = "myfurniture_shower_taps.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, 0.3125, 0.5, 0.5, 0.5},
+		}
+	},
+})
+-- Floor Lamp
+core.register_node("myfurniture:floor_lamp", {
+	description = "Floor Lamp",
+	tiles = {
+			"myfurniture_floor_lamp.png",
+			},
+	drawtype = "mesh",
+	mesh = "myfurniture_floor_lamp.obj",
+	light_source = 12,
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.3, -0.5, -0.3, 0.3, 1.5, 0.3},
+		}
+	},
+})
+-- Table Lamp
+core.register_node("myfurniture:table_lamp", {
+	description = "Table Lamp",
+	tiles = {
+			"myfurniture_floor_lamp.png",
+			},
+	drawtype = "mesh",
+	mesh = "myfurniture_table_lamp.obj",
+	light_source = 12,
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.3, -0.5, -0.3, 0.3, 1.5, 0.3},
+		}
+	},
+})
+-- Computer Chair
+core.register_node("myfurniture:computer_chair", {
+	description = "Computer Chair",
+	tiles = {
+			"myfurniture_computer_chair.png",
+			},
+	drawtype = "mesh",
+	mesh = "myfurniture_computer_chair.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.3, -0.5, -0.3, 0.3, 0.5, 0.3},
 		}
 	},
 })
