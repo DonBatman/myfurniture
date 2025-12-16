@@ -36,10 +36,11 @@ for i in ipairs(wood_mat) do
 	local wtype = wood_mat[i][3]
 	local wdesc = wood_mat[i][4]
 
-function core.get_myfurniture_formspec(pos)
+function core.get_myfurniture_formspec1(pos)
     local spos = pos.x .. "," .. pos.y .. "," ..pos.z
     local formspec =
         "size[9,7]"..
+		"background[-0.15,-0.25;9.3,7.75;myfurniture_background.png]"..
         "list[nodemeta:".. spos .. ";main;0.5,0.5;8,2;]"..
         "list[current_player;main;0.5,3;8,4;]"
     return formspec
@@ -48,6 +49,7 @@ function core.get_myfurniture_formspec2(pos)
     local spos = pos.x .. "," .. pos.y .. "," ..pos.z
     local formspec =
         "size[9,7]"..
+		"background[-0.15,-0.25;9.3,7.75;myfurniture_background.png]"..
         "list[nodemeta:".. spos .. ";main;0.5,0.5;8,1;]"..
         "list[current_player;main;0.5,3;8,4;]"
     return formspec
@@ -56,6 +58,7 @@ function core.get_myfurniture_formspec3(pos)
     local spos = pos.x .. "," .. pos.y .. "," ..pos.z
     local formspec =
         "size[9,7]"..
+		"background[-0.15,-0.25;9.3,7.75;myfurniture_background.png]"..
         "list[nodemeta:".. spos .. ";main;0.5,0.5;8,1;]"..
         "list[current_player;main;0.5,3;8,4;]"
     return formspec
@@ -392,7 +395,7 @@ core.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
             core.show_formspec(
                 clicker:get_player_name(),
                 "myfurniture:"..wtype.."_kitchen_cabinet",
-                core.get_myfurniture_formspec(pos)
+                core.get_myfurniture_formspec1(pos)
             )
     end,
 })
@@ -527,16 +530,9 @@ core.register_node("myfurniture:"..wtype.."_kitchen_upper_corner_cabinet", {
 	elseif not inv:is_empty("res") then
 		return false
 	end
-	
-
-
         local meta = core.get_meta(pos);
         local inv = meta:get_inventory()
-
         return inv:is_empty("main")
-	
-
-
     end,
     allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
         local meta = core.get_meta(pos)
