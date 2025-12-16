@@ -73,45 +73,45 @@ on_construct = function(pos)
 		
 		"label[1,0.5;Pick Your Furniture]"..
 		--row 1
-		"image_button[1,1.5;1,1;myfurniture_mach1.png;furn1; ]"..
-		"image_button[2,1.5;1,1;myfurniture_mach2.png;furn2; ]"..
-		"image_button[3,1.5;1,1;myfurniture_mach3.png;furn3; ]"..
-		"image_button[4,1.5;1,1;myfurniture_mach4.png;furn4; ]"..
-		"image_button[5,1.5;1,1;myfurniture_mach5.png;furn5; ]"..
-		"image_button[6,1.5;1,1;myfurniture_mach6.png;furn6; ]"..
-		"image_button[7,1.5;1,1;myfurniture_mach7.png;furn7; ]"..
+		"item_image_button[1,1.5;1,1;myfurniture:pine_wood_dinning_table;furn1; ]"..
+		"item_image_button[2,1.5;1,1;myfurniture:pine_wood_chair;furn2; ]"..
+		"item_image_button[3,1.5;1,1;myfurniture:pine_wood_stool;furn3; ]"..
+		"item_image_button[4,1.5;1,1;myfurniture:pine_wood_end_table;furn4; ]"..
+		"item_image_button[5,1.5;1,1;myfurniture:pine_wood_bookshelf;furn5; ]"..
+		"item_image_button[6,1.5;1,1;myfurniture:pine_wood_bookshelf_top;furn6; ]"..
+		"item_image_button[7,1.5;1,1;myfurniture:pine_wood_desk;furn7; ]"..
 		--row 2
-		"image_button[1,2.5;1,1;myfurniture_mach13.png;furn13; ]"..
-		"image_button[2,2.5;1,1;myfurniture_mach14.png;furn14; ]"..
-		"image_button[3,2.5;1,1;myfurniture_mach15.png;furn15; ]"..
-		"image_button[4,2.5;1,1;myfurniture_mach16.png;furn16; ]"..
-		"image_button[5,2.5;1,1;myfurniture_mach17.png;furn17; ]"..
-		"image_button[6,2.5;1,1;myfurniture_mach22.png;furn18; ]"..
-		"image_button[7,2.5;1,1;myfurniture_mach23.png;furn19; ]"..
+		"item_image_button[1,2.5;1,1;myfurniture:pine_wood_cabinet;furn13; ]"..
+		"item_image_button[2,2.5;1,1;myfurniture:pine_wood_kitchen_cabinet;furn14; ]"..
+		"item_image_button[3,2.5;1,1;myfurniture:pine_wood_kitchen_corner_cabinet;furn15; ]"..
+		"item_image_button[4,2.5;1,1;myfurniture:pine_wood_kitchen_upper_cabinet;furn16; ]"..
+		"item_image_button[5,2.5;1,1;myfurniture:pine_wood_kitchen_upper_corner_cabinet;furn17; ]"..
+		"item_image_button[6,2.5;1,1;myfurniture:pine_wood_chest_of_drawers;furn18; ]"..
+		"item_image_button[7,2.5;1,1;myfurniture:pine_wood_bench;furn19; ]"..
 		--row 3
-		"image_button[1,3.5;1,1;myfurniture_mach24.png;furn20; ]"..
-		"image_button[2,3.5;1,1;myfurniture_mach8.png;furn8; ]"..
-		"image_button[3,3.5;1,1;myfurniture_mach9.png;furn9; ]"..
-		"image_button[4,3.5;1,1;myfurniture_mach10.png;furn10; ]"..
-		"image_button[5,3.5;1,1;myfurniture_mach11.png;furn11; ]"..
-		"image_button[6,3.5;1,1;myfurniture_mach30.png;furn30; ]"..
-		"image_button[7,3.5;1,1;myfurniture_mach12.png;furn12; ]"..
+		"item_image_button[1,3.5;1,1;myfurniture:pine_wood_shelf;furn20; ]"..
+		"item_image_button[2,3.5;1,1;myfurniture:armchair;furn8; ]"..
+		"item_image_button[3,3.5;1,1;myfurniture:sofa_left;furn9; ]"..
+		"item_image_button[4,3.5;1,1;myfurniture:sofa_middle;furn10; ]"..
+		"item_image_button[5,3.5;1,1;myfurniture:sofa_right;furn11; ]"..
+		"item_image_button[6,3.5;1,1;myfurniture:sofa_corner;furn30; ]"..
+		"item_image_button[7,3.5;1,1;myfurniture:pine_wood_tv_stand;furn12; ]"..
 		--row 4
-		"image_button[1,4.5;1,1;myfurniture_mach18.png;pic1; ]"..
-		"image_button[2,4.5;1,1;myfurniture_mach19.png;pic2; ]"..
-		"image_button[3,4.5;1,1;myfurniture_mach20.png;pic3; ]"..
-		"image_button[4,4.5;1,1;myfurniture_mach21.png;pic4; ]"..
-		"image_button[5,4.5;1,1;myfurniture_mach25.png;furn21; ]"..
-		"image_button[6,4.5;1,1;myfurniture_mach31.png;furn31; ]"..
-		"image_button[7,4.5;1,1;myfurniture_mach35.png;furn35; ]"..
+		"item_image_button[1,4.5;1,1;myfurniture:picture1;pic1; ]"..
+		"item_image_button[2,4.5;1,1;myfurniture:picture2;pic2; ]"..
+		"item_image_button[3,4.5;1,1;myfurniture:picture3;pic3; ]"..
+		"item_image_button[4,4.5;1,1;myfurniture:picture4;pic4; ]"..
+		"item_image_button[5,4.5;1,1;myfurniture:vase;furn21; ]"..
+		"item_image_button[6,4.5;1,1;myfurniture:floor_lamp;furn31; ]"..
+		"item_image_button[7,4.5;1,1;myfurniture:table_lamp;furn35; ]"..
 		--row 5
-		"image_button[1,5.5;1,1;myfurniture_mach26.png;furn22; ]"..
-		"image_button[2,5.5;1,1;myfurniture_mach27.png;furn23; ]"..
-		"image_button[3,5.5;1,1;myfurniture_mach28.png;furn24; ]"..
-		"image_button[4,5.5;1,1;myfurniture_mach29.png;furn25; ]"..
-		"image_button[5,5.5;1,1;myfurniture_mach33.png;furn33; ]"..
-		"image_button[6,5.5;1,1;myfurniture_mach34.png;furn34; ]"..
-		"image_button[7,5.5;1,1;myfurniture_mach32.png;furn32; ]"..
+		"item_image_button[1,5.5;1,1;myfurniture:toilet;furn22; ]"..
+		"item_image_button[2,5.5;1,1;myfurniture:bathroom_sink;furn23; ]"..
+		"item_image_button[3,5.5;1,1;myfurniture:tub;furn24; ]"..
+		"item_image_button[4,5.5;1,1;myfurniture:mailbox;furn25; ]"..
+		"item_image_button[5,5.5;1,1;myfurniture:shower_taps;furn33; ]"..
+		"item_image_button[6,5.5;1,1;myfurniture:med_cabinet;furn34; ]"..
+		"item_image_button[7,5.5;1,1;myfurniture:computer_chair;furn32; ]"..
 
 		"list[current_player;main;1,7;8,4;]")
 	meta:set_string("infotext", "Furniture Machine")

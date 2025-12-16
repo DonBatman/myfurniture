@@ -361,23 +361,17 @@ core.register_node("myfurniture:"..wtype.."_kitchen_cabinet", {
 
     can_dig = function(pos,player)
 
-	local meta = core.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
-	local inv = meta:get_inventory()
-	if not inv:is_empty("ingot") then
-		return false
-	elseif not inv:is_empty("res") then
-		return false
-	end
-	
-
-
+		local meta = core.env:get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+		local inv = meta:get_inventory()
+		if not inv:is_empty("ingot") then
+			return false
+		elseif not inv:is_empty("res") then
+			return false
+		end
         local meta = core.get_meta(pos);
         local inv = meta:get_inventory()
 
         return inv:is_empty("main")
-	
-
-
     end,
     allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
         local meta = core.get_meta(pos)
