@@ -756,21 +756,55 @@ core.register_node("myfurniture:toilet", {
 			"myfurniture_toilet.png",
 			},
 	drawtype = "mesh",
-	mesh = "myfurniture_toilet.obj",
+	mesh = "myfurniture_toilet_closed.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	selection_box = {
 		type = "fixed",
 		fixed = {
-			{-0.3125, -0.5, -0.25, 0.0625, -0.1875, 0.3125},
-			{-0.375, -0.1875, -0.375, 0.125, 0.125, 0.375},
-			{-0.25, -0.1875, -0.5, 0, 0.125, 0.5},
-			{-0.3125, -0.1875, -0.4375, 0.0625, 0.125, 0.4375},
-			{-0.5, 0.125, 0.1875, 0.25, 0.5, 0.5},
-			{-0.5, 0.375, 0.125, -0.3125, 0.4375, 0.1875},
+			{-0.35, -0.5, -0.5, 0.35, 0, 0.5},
+			{-0.35, -0.5, 0.125, 0.35, 0.5, 0.5},
 		}
-	}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{-0.35, -0.5, -0.5, 0.35, 0, 0.5},
+			{-0.35, -0.5, 0.125, 0.35, 0.5, 0.5},
+		}
+	},
+	on_punch = function(pos, node, puncher, pointed_thing)
+		core.set_node(pos, {name = "myfurniture:toilet_open", param2 = node.param2})
+	end
+})
+core.register_node("myfurniture:toilet_open", {
+	description = "toilet",
+	tiles = {
+			"myfurniture_toilet.png",
+			},
+	drawtype = "mesh",
+	mesh = "myfurniture_toilet_open.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.35, -0.5, -0.5, 0.35, 0, 0.5},
+			{-0.35, -0.5, 0.125, 0.35, 0.5, 0.5},
+		}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{-0.35, -0.5, -0.5, 0.35, 0, 0.5},
+			{-0.35, -0.5, 0.125, 0.35, 0.5, 0.5},
+		}
+	},
+	on_punch = function(pos, node, puncher, pointed_thing)
+		core.set_node(pos, {name = "myfurniture:toilet", param2 = node.param2})
+	end
 })
 
 --Bathroom Sink
