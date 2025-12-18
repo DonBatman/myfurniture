@@ -63,6 +63,15 @@ function core.get_myfurniture_formspec3(pos)
         "list[current_player;main;0.5,3;8,4;]"
     return formspec
 end
+function core.get_myfurniture_formspec4(pos)
+    local spos = pos.x .. "," .. pos.y .. "," ..pos.z
+    local formspec =
+        "size[9,7]"..
+		"background[-0.15,-0.25;9.3,7.75;myfurniture_background.png]"..
+        "list[nodemeta:".. spos .. ";main;0.5,0.5;8,1;]"..
+        "list[current_player;main;0.5,3;8,4;]"
+    return formspec
+end
 
 --Table
 core.register_node("myfurniture:"..wtype.."_dinning_table", {
@@ -680,7 +689,57 @@ core.register_node("myfurniture:"..wtype.."_chest_of_drawers", {
 			{-0.375, -0.0625, -0.125, 0.375, 0.1875, -0.0625},
 			{-0.375, 0.25, -0.125, 0.375, 0.4375, -0.0625},
 		}
-	}
+	},
+		on_construct = function(pos)
+        local meta = core.get_meta(pos)
+        meta:set_string("infotext", "Chest Of Drawers")
+        meta:set_string("owner", "")
+        local inv = meta:get_inventory()
+        inv:set_size("main", 9*7)
+    end,
+
+    can_dig = function(pos,player)
+
+	local meta = core.get_meta({x=pos.x,y=pos.y+1,z=pos.z});
+	local inv = meta:get_inventory()
+	if not inv:is_empty("ingot") then
+		return false
+	elseif not inv:is_empty("res") then
+		return false
+	end
+	
+
+
+        local meta = core.get_meta(pos);
+        local inv = meta:get_inventory()
+
+        return inv:is_empty("main")
+	
+
+
+    end,
+    allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+        local meta = core.get_meta(pos)
+
+        return count
+    end,
+    allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+        local meta = core.get_meta(pos)
+        return stack:get_count()
+    end,
+    allow_metadata_inventory_take = function(pos, listname, index, stack, player)
+        local meta = core.get_meta(pos)
+        return stack:get_count()
+    end,
+
+    on_rightclick = function(pos, node, clicker)
+        local meta = core.get_meta(pos)
+            core.show_formspec(
+                clicker:get_player_name(),
+                "myfurniture:"..wtype.."_chest_of_drawers",
+                core.get_myfurniture_formspec4(pos)
+            )
+    end,
 })
 --Bench
 core.register_node("myfurniture:"..wtype.."_bench", {
@@ -805,7 +864,7 @@ core.register_node("myfurniture:toilet_open", {
 
 --Bathroom Sink
 core.register_node("myfurniture:bathroom_sink", {
-	description = "toilet",
+	description = "Bathroom Sink",
 	tiles = {
 			"myfurniture_bathroom_sink.png",
 			},
@@ -817,24 +876,42 @@ core.register_node("myfurniture:bathroom_sink", {
 	selection_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.1875, 0.5, 0.375, 0.5},
-			{-0.5, 0.375, 0.375, 0.5, 0.5, 0.5},
-			{0.0625, -0.3125, -0.25, 0.4375, 0.25, -0.1875},
-			{-0.4375, -0.3125, -0.25, -0.0625, 0.25, -0.1875},
-			{-0.1875, 0.375, 0.1875, 0.1875, 0.4375, 0.3125},
-			{0.0625, 0.375, 0.1875, 0.1875, 0.5, 0.3125},
-			{-0.1875, 0.375, 0.1875, -0.0625, 0.5, 0.3125},
-			{-0.0625, 0.4375, 0.0625, 0.0625, 0.5, 0.3125},
+			{-0.5, -0.5, -0.25, 0.5, 0.4, 0.5},
 		}
-	},	
+	},
+	on_punch = function(pos, node, puncher, pointed_thing)
+		core.set_node(pos,{name = "myfurniture:bathroom_sink_running", param2 = node.param2})
+	end,
+
+})
+--Bathroom Sink
+core.register_node("myfurniture:bathroom_sink_running", {
+	description = "Bathroom Sink",
+	tiles = {
+			"myfurniture_bathroom_sink_running.png",
+			},
+	drawtype = "mesh",
+	mesh = "myfurniture_bathroom_sink_running.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.25, 0.5, 0.4, 0.5},
+		}
+	},
+	on_punch = function(pos, node, puncher, pointed_thing)
+		core.set_node(pos,{name = "myfurniture:bathroom_sink", param2 = node.param2})
+	end,
 
 })
 
 -- Tub
 core.register_node("myfurniture:tub", {
-	description = "tub",
+	description = "Tub",
 	tiles = {
-			"default_snow.png",
+			"myfurniture_tub_full.png",
 			},
 	drawtype = "mesh",
 	mesh = "myfurniture_tub.obj",
@@ -869,7 +946,35 @@ core.register_node("myfurniture:tub", {
     		return
 		end
 	end,
-	
+	on_punch = function(pos, node, puncher, pointed_thing)
+		core.set_node(pos,{name = "myfurniture:tub_full", param2 = node.param2})
+	end,
+})
+core.register_node("myfurniture:tub_full", {
+	description = "Tub",
+	tiles = {
+			"myfurniture_tub_full.png",
+			},
+	drawtype = "mesh",
+	mesh = "myfurniture_tub_full.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 1.5, 0.4, 0.5},
+		}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 1.5, 0.4, 0.5},
+		}
+	},
+	on_punch = function(pos, node, puncher, pointed_thing)
+		core.set_node(pos,{name = "myfurniture:tub", param2 = node.param2})
+	end,
 })
 
 -- Med Cabinet
@@ -894,9 +999,10 @@ core.register_node("myfurniture:med_cabinet", {
 core.register_node("myfurniture:shower_taps", {
 	description = "Shower Taps",
 	tiles = {
-			"default_clay.png",
+			"myfurniture_shower_taps_on.png",
 			},
 	drawtype = "mesh",
+	walkable = true,
 	mesh = "myfurniture_shower_taps.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -907,6 +1013,30 @@ core.register_node("myfurniture:shower_taps", {
 			{-0.5, -0.5, 0.3125, 0.5, 0.5, 0.5},
 		}
 	},
+	on_punch = function(pos, node, puncher, pointed_thing)
+		core.set_node(pos,{name = "myfurniture:shower_taps_on", param2 = node.param2})
+	end,
+})
+core.register_node("myfurniture:shower_taps_on", {
+	description = "Shower Taps",
+	tiles = {
+			"myfurniture_shower_taps_on.png",
+			},
+	drawtype = "mesh",
+	walkable = true,
+	mesh = "myfurniture_shower_taps_on.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, 0.3125, 0.5, 0.5, 0.5},
+		}
+	},
+	on_punch = function(pos, node, puncher, pointed_thing)
+		core.set_node(pos,{name = "myfurniture:shower_taps", param2 = node.param2})
+	end,
 })
 -- Floor Lamp
 core.register_node("myfurniture:floor_lamp", {
@@ -1041,7 +1171,7 @@ core.register_node("myfurniture:mailbox", {
 })
 -- Mailbox open
 core.register_node("myfurniture:mailbox_open", {
-	description = "Mailbox Open",
+	description = "Mailbox",
 	tiles = {"myfurniture_mailbox.png"},
 	drawtype = "mesh",
 	mesh = "myfurniture_mailbox_open.obj",
