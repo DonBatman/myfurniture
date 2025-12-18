@@ -921,13 +921,21 @@ core.register_node("myfurniture:tub", {
 	selection_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, 1.5, 0.4, 0.5},
+			{-0.5, -0.5, 0.5, -0.45, 0.3, 0.5},
+			{0.45, -0.5, 0.5, 0.5, 0.3, 0.5},
+			{-0.5, -0.5, -0.5, 1.5, 0.3, -0.45},
+			{-0.5, -0.5, 0.45, 1.5, 0.3, 0.5},
+			{-0.5, -0.5, 0.5, 1.5, -0.49, 0.5},
 		}
 	},
 	collision_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, 1.5, 0.4, 0.5},
+			{-0.5, -0.5, 0.5, -0.45, 0.3, 0.5},
+			{0.45, -0.5, 0.5, 0.5, 0.3, 0.5},
+			{-0.5, -0.5, -0.5, 1.5, 0.3, -0.45},
+			{-0.5, -0.5, 0.45, 1.5, 0.3, 0.5},
+			{-0.5, -0.5, 0.5, 1.5, -0.49, 0.5},
 		}
 	},
 	
@@ -963,13 +971,21 @@ core.register_node("myfurniture:tub_full", {
 	selection_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, 1.5, 0.4, 0.5},
+			{-0.5, -0.5, 0.5, -0.45, 0.3, 0.5},
+			{0.45, -0.5, 0.5, 0.5, 0.3, 0.5},
+			{-0.5, -0.5, -0.5, 1.5, 0.3, -0.45},
+			{-0.5, -0.5, 0.45, 1.5, 0.3, 0.5},
+			{-0.5, -0.5, 0.5, 1.5, -0.49, 0.5},
 		}
 	},
 	collision_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, 1.5, 0.4, 0.5},
+			{-0.5, -0.5, 0.5, -0.45, 0.3, 0.5},
+			{0.45, -0.5, 0.5, 0.5, 0.3, 0.5},
+			{-0.5, -0.5, -0.5, 1.5, 0.3, -0.45},
+			{-0.5, -0.5, 0.45, 1.5, 0.3, 0.5},
+			{-0.5, -0.5, 0.5, 1.5, -0.49, 0.5},
 		}
 	},
 	on_punch = function(pos, node, puncher, pointed_thing)
@@ -1002,7 +1018,7 @@ core.register_node("myfurniture:shower_taps", {
 			"myfurniture_shower_taps_on.png",
 			},
 	drawtype = "mesh",
-	walkable = true,
+	walkable = false,
 	mesh = "myfurniture_shower_taps.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -1023,7 +1039,7 @@ core.register_node("myfurniture:shower_taps_on", {
 			"myfurniture_shower_taps_on.png",
 			},
 	drawtype = "mesh",
-	walkable = true,
+	walkable = false,
 	mesh = "myfurniture_shower_taps_on.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
