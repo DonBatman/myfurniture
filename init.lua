@@ -42,7 +42,9 @@ function core.get_myfurniture_formspec1(pos)
         "size[9,7]"..
 		"background[-0.15,-0.25;9.3,7.75;myfurniture_background.png]"..
         "list[nodemeta:".. spos .. ";main;0.5,0.5;8,2;]"..
-        "list[current_player;main;0.5,3;8,4;]"
+        "list[current_player;main;0.5,3;8,4;]"..
+        "listring[nodemeta:" .. spos .. ";main]" ..
+        "listring[current_player;main]"
     return formspec
 end
 function core.get_myfurniture_formspec2(pos)
@@ -51,7 +53,9 @@ function core.get_myfurniture_formspec2(pos)
         "size[9,7]"..
 		"background[-0.15,-0.25;9.3,7.75;myfurniture_background.png]"..
         "list[nodemeta:".. spos .. ";main;0.5,0.5;8,1;]"..
-        "list[current_player;main;0.5,3;8,4;]"
+        "list[current_player;main;0.5,3;8,4;]"..
+        "listring[nodemeta:" .. spos .. ";main]" ..
+        "listring[current_player;main]"
     return formspec
 end
 function core.get_myfurniture_formspec3(pos)
@@ -60,7 +64,9 @@ function core.get_myfurniture_formspec3(pos)
         "size[9,7]"..
 		"background[-0.15,-0.25;9.3,7.75;myfurniture_background.png]"..
         "list[nodemeta:".. spos .. ";main;0.5,0.5;8,1;]"..
-        "list[current_player;main;0.5,3;8,4;]"
+        "list[current_player;main;0.5,3;8,4;]"..
+        "listring[nodemeta:" .. spos .. ";main]" ..
+        "listring[current_player;main]"
     return formspec
 end
 function core.get_myfurniture_formspec4(pos)
@@ -69,7 +75,9 @@ function core.get_myfurniture_formspec4(pos)
         "size[9,7]"..
 		"background[-0.15,-0.25;9.3,7.75;myfurniture_background.png]"..
         "list[nodemeta:".. spos .. ";main;0.5,0.5;8,1;]"..
-        "list[current_player;main;0.5,3;8,4;]"
+        "list[current_player;main;0.5,3;8,4;]"..
+        "listring[nodemeta:" .. spos .. ";main]" ..
+        "listring[current_player;main]"
     return formspec
 end
 
