@@ -769,7 +769,7 @@ core.register_node("myfurniture:"..wtype.."_bench", {
 		}
 	}
 })
---Bench
+--Shelf
 core.register_node("myfurniture:"..wtype.."_shelf", {
 	description = wdesc.." Shelf",
 	tiles = {
@@ -792,6 +792,52 @@ core.register_node("myfurniture:"..wtype.."_shelf", {
 			{-0.375, 0, 0.375, -0.25, 0.25, 0.5},
 		}
 	}
+})
+--Kitchen Sink
+core.register_node("myfurniture:"..wtype.."_kitchen_sink", {
+	description = wdesc.." Kitchen Sink",
+	tiles = {
+			"myfurniture_kitchen_sink_"..wimg..".png",
+			},
+	drawtype = "mesh",
+	mesh = "myfurniture_kitchen_sink.obj",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 1.5, 0.5, 0.5},
+		}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 1.5, 0.5, 0.5},
+		}
+	},
+	after_place_node = function(pos, placer)
+		local dir = placer:get_look_dir()
+		local right_pos = vector.new(pos)
+		if math.abs(dir.x) < math.abs(dir.z) then
+			right_pos.x = right_pos.x+dir.z/math.abs(dir.z)
+		else
+			right_pos.z = right_pos.z-dir.x/math.abs(dir.x)
+		end
+		local inv = placer:get_inventory()
+		local give_back = ItemStack("myfurniture:"..wtype.."_kitchen_sink")
+		local right_node = core.get_node(right_pos)
+		if right_node.name ~= "air" then
+    		core.chat_send_player(placer:get_player_name(),"Not enough room")
+    		core.remove_node(pos)
+			if inv:room_for_item("main", give_back) then
+            	inv:add_item("main", give_back)
+        	else
+            	core.add_item(pos, give_back)
+        	end
+        	return true
+		end
+	end,
 })
 end
 --Vase
@@ -1011,7 +1057,7 @@ core.register_node("myfurniture:med_cabinet", {
 	mesh = "myfurniture_medicine_cabinet.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -1030,7 +1076,7 @@ core.register_node("myfurniture:shower_taps", {
 	mesh = "myfurniture_shower_taps.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -1051,7 +1097,7 @@ core.register_node("myfurniture:shower_taps_on", {
 	mesh = "myfurniture_shower_taps_on.obj",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
+	groups = {cracky = 2, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
 	selection_box = {
 		type = "fixed",
 		fixed = {

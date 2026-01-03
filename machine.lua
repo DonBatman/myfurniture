@@ -63,13 +63,13 @@ end,
 on_construct = function(pos)
 		
 	local meta = core.get_meta(pos)
-	meta:set_string("formspec", "invsize[10,11;]"..
-		"background[-0.15,-0.25;10.40,11.75;myfurniture_background.png]"..
-		"list[current_name;ingot;8,2;1,1;]"..
-		"list[current_name;res;8,4;1,1;]"..
+	meta:set_string("formspec", "invsize[12,11;]"..
+		"background[-0.15,-0.25;12.40,11.75;myfurniture_background.png]"..
+		"list[current_name;ingot;10,2;1,1;]"..
+		"list[current_name;res;10,4;1,1;]"..
 		
-		"label[8,1.5;Input:]"..
-		"label[8,3.5;Output:]"..
+		"label[10,1.5;Input:]"..
+		"label[10,3.5;Output:]"..
 		
 		"label[1,0.5;Pick Your Furniture]"..
 		--row 1
@@ -86,16 +86,17 @@ on_construct = function(pos)
 		"item_image_button[3,2.5;1,1;myfurniture:pine_wood_kitchen_corner_cabinet;furn15; ]"..
 		"item_image_button[4,2.5;1,1;myfurniture:pine_wood_kitchen_upper_cabinet;furn16; ]"..
 		"item_image_button[5,2.5;1,1;myfurniture:pine_wood_kitchen_upper_corner_cabinet;furn17; ]"..
-		"item_image_button[6,2.5;1,1;myfurniture:pine_wood_chest_of_drawers;furn18; ]"..
-		"item_image_button[7,2.5;1,1;myfurniture:pine_wood_bench;furn19; ]"..
+		"item_image_button[6,2.5;1,1;myfurniture:pine_wood_kitchen_sink;furn36; ]"..
+		"item_image_button[7,2.5;1,1;myfurniture:pine_wood_chest_of_drawers;furn18; ]"..
+		"item_image_button[8,2.5;1,1;myfurniture:pine_wood_bench;furn19; ]"..
 		--row 3
-		"item_image_button[1,3.5;1,1;myfurniture:pine_wood_shelf;furn20; ]"..
-		"item_image_button[2,3.5;1,1;myfurniture:armchair;furn8; ]"..
-		"item_image_button[3,3.5;1,1;myfurniture:sofa_left;furn9; ]"..
-		"item_image_button[4,3.5;1,1;myfurniture:sofa_middle;furn10; ]"..
-		"item_image_button[5,3.5;1,1;myfurniture:sofa_right;furn11; ]"..
-		"item_image_button[6,3.5;1,1;myfurniture:sofa_corner;furn30; ]"..
-		"item_image_button[7,3.5;1,1;myfurniture:pine_wood_tv_stand;furn12; ]"..
+		"item_image_button[1,3.5;1,1;myfurniture:armchair;furn8; ]"..
+		"item_image_button[2,3.5;1,1;myfurniture:sofa_left;furn9; ]"..
+		"item_image_button[3,3.5;1,1;myfurniture:sofa_middle;furn10; ]"..
+		"item_image_button[4,3.5;1,1;myfurniture:sofa_right;furn11; ]"..
+		"item_image_button[5,3.5;1,1;myfurniture:sofa_corner;furn30; ]"..
+		"item_image_button[6,3.5;1,1;myfurniture:pine_wood_tv_stand;furn12; ]"..
+		"item_image_button[7,3.5;1,1;myfurniture:pine_wood_shelf;furn20; ]"..
 		--row 4
 		"item_image_button[1,4.5;1,1;myfurniture:picture1;pic1; ]"..
 		"item_image_button[2,4.5;1,1;myfurniture:picture2;pic2; ]"..
@@ -108,12 +109,12 @@ on_construct = function(pos)
 		"item_image_button[1,5.5;1,1;myfurniture:toilet;furn22; ]"..
 		"item_image_button[2,5.5;1,1;myfurniture:bathroom_sink;furn23; ]"..
 		"item_image_button[3,5.5;1,1;myfurniture:tub;furn24; ]"..
-		"item_image_button[4,5.5;1,1;myfurniture:mailbox;furn25; ]"..
-		"item_image_button[5,5.5;1,1;myfurniture:shower_taps;furn33; ]"..
-		"item_image_button[6,5.5;1,1;myfurniture:med_cabinet;furn34; ]"..
+		"item_image_button[4,5.5;1,1;myfurniture:shower_taps;furn33; ]"..
+		"item_image_button[5,5.5;1,1;myfurniture:med_cabinet;furn34; ]"..
+		"item_image_button[6,5.5;1,1;myfurniture:mailbox;furn25; ]"..
 		"item_image_button[7,5.5;1,1;myfurniture:computer_chair;furn32; ]"..
 
-		"list[current_player;main;1,7;8,4;]")
+		"list[current_player;main;2,7;8,4;]")
 	meta:set_string("infotext", "Furniture Machine")
 	local inv = meta:get_inventory()
 	inv:set_size("ingot", 1)
@@ -159,6 +160,7 @@ or fields["furn32"]
 or fields["furn33"]
 or fields["furn34"]
 or fields["furn35"]
+or fields["furn36"]
 then
 
 	local ingotstack = inv:get_stack("ingot", 1)
@@ -324,14 +326,16 @@ local wood_mat = {
 			make_ok = "1"
 		end
 	end
-end--ends ipairs
+
+	if fields["furn36"] then
+		if woodname == wmat then
+			shape = "myfurniture:"..wtype.."_kitchen_sink"
+			make_ok = "1"
+		end
+	end
 	if fields["pic1"] then
 			if
-				ingotstack:get_name()=="default:wood" or
-				ingotstack:get_name()=="default:pine_wood" or
-				ingotstack:get_name()=="default:aspen_wood" or
-				ingotstack:get_name()=="default:acacia_wood" or
-				ingotstack:get_name()=="default:junglewood" then
+				ingotstack:get_name()== wmat then
 				make_ok = "1"
 				shape = "myfurniture:picture1"
 			end
@@ -339,11 +343,7 @@ end--ends ipairs
 
 	if fields["pic2"] then
 			if
-				ingotstack:get_name()=="default:wood" or
-				ingotstack:get_name()=="default:pine_wood" or
-				ingotstack:get_name()=="default:aspen_wood" or
-				ingotstack:get_name()=="default:acacia_wood" or
-				ingotstack:get_name()=="default:junglewood" then
+				ingotstack:get_name()== wmat then
 				make_ok = "1"
 				shape = "myfurniture:picture2"
 			end
@@ -351,11 +351,7 @@ end--ends ipairs
 
 	if fields["pic3"] then
 			if
-				ingotstack:get_name()=="default:wood" or
-				ingotstack:get_name()=="default:pine_wood" or
-				ingotstack:get_name()=="default:aspen_wood" or
-				ingotstack:get_name()=="default:acacia_wood" or
-				ingotstack:get_name()=="default:junglewood" then
+				ingotstack:get_name()== wmat then
 				make_ok = "1"
 				shape = "myfurniture:picture3"
 			end
@@ -363,11 +359,7 @@ end--ends ipairs
 
 	if fields["pic4"] then
 			if
-				ingotstack:get_name()=="default:wood" or
-				ingotstack:get_name()=="default:pine_wood" or
-				ingotstack:get_name()=="default:aspen_wood" or
-				ingotstack:get_name()=="default:acacia_wood" or
-				ingotstack:get_name()=="default:junglewood" then
+				ingotstack:get_name()== wmat then
 				make_ok = "1"
 				shape = "myfurniture:picture4"
 			end
@@ -375,11 +367,7 @@ end--ends ipairs
 	
 	if fields["furn8"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:armchair"
 		end
@@ -388,11 +376,7 @@ end--ends ipairs
 	if fields["furn9"] then
 	
 		if 
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:sofa_left"
 		end
@@ -400,11 +384,7 @@ end--ends ipairs
 
 	if fields["furn10"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:sofa_middle"
 		end
@@ -412,11 +392,7 @@ end--ends ipairs
 
 	if fields["furn30"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:sofa_corner"
 		end
@@ -424,11 +400,7 @@ end--ends ipairs
 
 	if fields["furn11"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:sofa_right"
 		end
@@ -436,11 +408,7 @@ end--ends ipairs
 
 	if fields["furn21"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:vase"
 		end
@@ -448,11 +416,7 @@ end--ends ipairs
 
 	if fields["furn22"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:toilet"
 		end
@@ -460,11 +424,7 @@ end--ends ipairs
 
 	if fields["furn23"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:bathroom_sink"
 		end
@@ -472,11 +432,7 @@ end--ends ipairs
 
 	if fields["furn24"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:tub"
 		end
@@ -484,11 +440,7 @@ end--ends ipairs
 
 	if fields["furn25"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:mailbox"
 		end
@@ -496,11 +448,7 @@ end--ends ipairs
 
 	if fields["furn31"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:floor_lamp"
 		end
@@ -508,11 +456,7 @@ end--ends ipairs
 
 	if fields["furn32"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:computer_chair"
 		end
@@ -520,11 +464,7 @@ end--ends ipairs
 
 	if fields["furn33"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:shower_taps"
 		end
@@ -532,11 +472,7 @@ end--ends ipairs
 
 	if fields["furn34"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:med_cabinet"
 		end
@@ -544,16 +480,13 @@ end--ends ipairs
 
 	if fields["furn35"] then
 		if
-			ingotstack:get_name()=="default:wood" or
-			ingotstack:get_name()=="default:pine_wood" or
-			ingotstack:get_name()=="default:aspen_wood" or
-			ingotstack:get_name()=="default:acacia_wood" or
-			ingotstack:get_name()=="default:junglewood" then
+			ingotstack:get_name()== wmat then
 			make_ok = "1"
 			shape = "myfurniture:table_lamp"
 		end
 	end
 
+end--ends ipairs
 ----------------------------------------------------------------------------
     		if make_ok == "1" then
 				inv:add_item("res",shape)
