@@ -1278,3 +1278,28 @@ core.register_node("myfurniture:mailbox_open", {
 	end,
 })
 
+if core.get_modpath("lucky_block") then
+	lucky_block:add_blocks({
+		{"dro", {"myfurniture:pine_wood_dinning_table"}, 1},
+		{"dro", {"myfurniture:pine_wood_chair"}, 1},
+		{"dro", {"myfurniture:armchair"}, 1},
+		{"dro", {"myfurniture:pine_wood_bookshelf"}, 1},
+		{"dro", {"myfurniture:pine_wood_cabinet"}, 1},
+		{"dro", {"myfurniture:pine_wood_desk"}, 1},
+		{"dro", {"myfurniture:pine_wood_end_table"}, 1},
+		{"dro", {"myfurniture:sofa_right","myfurniture:sofa_left","myfurniture:sofa_middle","myfurniture:sofa_corner"}, 1},
+		{"dro", {"myfurniture:pine_wood_kitchen_cabinet"}, 1},
+		{"dro", {"myfurniture:pine_wood_kitchen_upper_cabinet"}, 1},
+		{"dro", {"myfurniture:picture1","myfurniture:picture2","myfurniture:picture3","myfurniture:picture4"}, 1},
+		{"dro", {"myfurniture:vase"}, 1},
+		{"dro", {"myfurniture:toilet"}, 1},
+		{"dro", {"myfurniture:bathroom_sink"}, 1},
+		{"dro", {"myfurniture:tub"}, 1},
+		{"dro", {"myfurniture:shower_taps"}, 1},
+		{"dro", {"myfurniture:floor_lamp"}, 1},
+		{"dro", {"myfurniture:table_lamp"}, 1},
+		{"dro", {"myfurniture:computer_chair"}, 1},
+		{"dro", {"myfurniture:mailbox"}, 1},
+		{"dro", {"myfurniture:machine"}, 1},
+	})
+end
